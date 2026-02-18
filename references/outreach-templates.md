@@ -1,177 +1,106 @@
-# Outreach Templates
+# Outreach Scripts (High-Status)
 
-Four templates for problem discovery outreach. Each has a German and English version. Pick the template based on the contact and research goal, then fill in the placeholders.
+**Strategy:** Do not ask for a meeting. Ask a question that provokes a reaction. If they reply, *then* you suggest a call.
 
-All templates are bilingual. Default to German for DACH-region contacts, English otherwise. Ask the user if unclear.
+## Template 1: The "Reality Check" (For AI/Agent Founders)
 
-## Template Selection Guide
+*Use when: You found a founder building agents who talks about reliability/evals (Green Flag).*
 
-| Template | Best for | Tone |
-|----------|----------|------|
-| 1 - Hypothesis | Testing if they have the specific problem you're solving | Direct, professional |
-| 2 - Pattern | Founders who want to know what others are doing | Peer-level, comparative |
-| 3 - Workflow | Understanding how they handle a specific task right now | Curious, structured |
-| 4 - Short | Very early-stage founders or warm/mutual connections | Casual, low-pressure |
-
-**Selection rules:**
-- Tier 1 contacts (Founder/CEO/CTO): Use Template 2 or 4 — they respond to peer framing and brevity
-- Tier 2 contacts (VP/Head of): Use Template 1 or 3 — they appreciate specificity and structured asks
-- Mutual connections exist: Lean toward Template 4
-- You have a clear hypothesis to test: Use Template 1
-- You want to understand their current workflow: Use Template 3
-
-## Placeholders
-
-Fill these from the research data:
-
-- `[NAME]` — First name of the contact
-- `[TOPIC]` / `[THEMA]` — The problem space (e.g. "developer onboarding", "QA automation")
-- `[SPECIFIC PROBLEM]` / `[SPEZIFISCHES PROBLEM]` — The concrete hypothesis (e.g. "handoff between design and engineering breaks down at 20+ people")
-- `[CURRENT SOLUTION / STATUS QUO]` / `[AKTUELLE LÖSUNG / STATUS QUO]` — What most teams do today (e.g. "Notion docs and weekly syncs")
-- `[ANNOYING PROBLEM]` / `[NERVIGES PROBLEM]` — The pain point framed colloquially (e.g. "flaky CI pipelines eating 2 hours a day")
-- `[CRITICAL TOPIC]` / `[KRITISCHES THEMA]` — The process you want to understand (e.g. "incident response coordination")
-- `[AREA]` / `[BEREICH]` — Broad functional area (e.g. "engineering productivity")
-- `[COMPANY]` / `[FIRMA]` — Their company name
-- `[CALENDLY-LINK]` — Leave as placeholder, the user fills this in
-
----
-
-## Template 1 — The "Hypothesis" (Direct & Professional)
-
-### Deutsch
-
-Betreff: Deine Einschatzung zu [THEMA]
-
-Hi [NAME],
-
-ich arbeite gerade an der These, dass [SPEZIFISCHES PROBLEM] in Teams eurer Grosse oft unterschatzt wird.
-
-Viele versuchen das durch [AKTUELLE LOESUNG / STATUS QUO] zu losen, statt es strukturell anzugehen.
-
-Wurde gerne 10 Minuten deine ehrliche Meinung dazu horen. Ist das bei euch ein Thema oder habt ihr das bereits gelost?
-
-Rein explorativ, kein Pitch.
-
-[CALENDLY-LINK]
+**Subject:** The [Specific Pain] reality at [Company]
 
 ### English
 
-Subject: Your take on [TOPIC]
+Hi [Name],
 
-Hi [NAME],
+I saw you're shipping agents for [Use Case]. I've been tracking how teams handle [Specific Pain, e.g., Context Drifting] at that scale.
 
-I am working on the thesis that [SPECIFIC PROBLEM] is often underestimated in teams of your size.
+Most founders tell me they just [Status Quo, e.g., manually review logs], but that feels unscalable.
 
-Many try to solve this with [CURRENT SOLUTION / STATUS QUO] instead of fixing the root cause.
-
-I would love 10 minutes to hear your honest take on this. Is this an issue for you, or have you already solved it?
-
-Purely exploratory, no pitch.
-
-[CALENDLY-LINK]
-
----
-
-## Template 2 — The "Pattern" (Peer Comparison)
+Are you guys actually trusting your auto-evals yet, or is it still a manual grind? Just looking for a reality check from someone actually shipping.
 
 ### Deutsch
 
-Betreff: Kurze Frage zu [BEREICH]
+Hi [Name],
 
-Hi [NAME],
+ich sehe, dass ihr Agents für [Use Case] baut.
 
-ich sehe gerade ein Muster bei Teams in eurem Stadium.
+Bei den meisten Teams in eurem Stadium bricht irgendwann [Specific Pain] zusammen. Viele versuchen das mit [Status Quo] zu fixen, aber das skaliert eigentlich null.
 
-Viele akzeptieren [NERVIGES PROBLEM] einfach als Teil des Alltags, obwohl es eigentlich massiv Zeit kostet.
-
-Mich wurde interessieren, ob ihr da eine Ausnahme seid oder ob das bei euch auch einfach mitlauft.
-
-Hattest du 15 Minuten fur einen kurzen Abgleich?
-
-[CALENDLY-LINK]
-
-### English
-
-Subject: Quick question re: [AREA]
-
-Hi [NAME],
-
-I am seeing a pattern with teams at your stage.
-
-Many just accept [ANNOYING PROBLEM] as part of the job, even though it is a massive time drain.
-
-Curious if you are the exception here, or if this is something that runs in the background for you too.
-
-Open to 15 minutes to compare notes?
-
-[CALENDLY-LINK]
+Vertraut ihr euren Auto-Evals da schon wirklich, oder ist das bei euch auch noch viel manuelle Arbeit? Kurzer Reality-Check wäre super.
 
 ---
 
-## Template 3 — The "Workflow" (Curiosity)
+## Template 2: The "Pattern Match" (For VPs/Heads of)
 
-### Deutsch
+*Use when: You want to validate a specific bottleneck (e.g., cost or latency).*
 
-Betreff: Umgang mit [THEMA] bei [FIRMA]
-
-Hi [NAME],
-
-ich fuhre gerade Gesprache mit Grundern dazu, wie sie [KRITISCHES THEMA] handhaben.
-
-Dabei sehe ich meist zwei Lager. Die einen fangen es manuell ab und die anderen haben es automatisiert.
-
-Wo steht ihr gerade? Wurde gerne verstehen, warum ihr euch fur euren Weg entschieden habt.
-
-Kein Sales, nur Research.
-
-[CALENDLY-LINK]
+**Subject:** Question re: [Topic] bottlenecks
 
 ### English
 
-Subject: Handling [TOPIC] at [COMPANY]
+Hi [Name],
 
-Hi [NAME],
+I'm seeing a weird pattern with teams scaling [Topic]. They usually hit a wall at [Number] users because [Current Solution] starts costing too much [Time/Money].
 
-I am currently speaking with founders about how they handle [CRITICAL TOPIC].
+Is [Company] seeing that friction yet, or did you manage to bypass it?
 
-I usually see two camps. Those who patch it manually and those who have automated it.
+(Not selling anything, just trying to see if my data is skewed).
 
-Which camp are you in right now? I would love to understand the reasoning behind your setup.
+### Deutsch
 
-No sales, just research.
+Hi [Name],
 
-[CALENDLY-LINK]
+ich sehe gerade ein Muster bei Teams, die [Topic] skalieren. Ab [Number] Usern wird [Current Solution] meistens extrem teuer/langsam.
+
+Merkt ihr das bei [Company] auch schon, oder habt ihr das umschifft?
+
+(Kein Pitch, versuche nur meine Daten abzugleichen).
 
 ---
 
-## Template 4 — The "Short" (Casual)
+## Template 3: The "Contrarian" (For Tier 1 Founders)
 
-### Deutsch
+*Use this for the "Conversational Disagreement" you identified in SKILL.md.*
 
-Betreff: Intro / [THEMA]
-
-Hi [NAME],
-
-ich mache mir gerade Gedanken zu den Hurden bei [THEMA] und sammle Eindrucke aus der Praxis.
-
-Wurde mir gerne kurz deine Perspektive borgen. Was lauft bei euch in dem Bereich gut und wo hakt es?
-
-Ganz entspannter Austausch. 10 Minuten.
-
-Passt es dir die Tage?
-[CALENDLY-LINK]
+**Subject:** Your take on [Controversial Topic]
 
 ### English
 
-Subject: Intro / [TOPIC]
+Hi [Name],
 
-Hi [NAME],
+I saw your post about [Topic]. Everyone seems to think [Common Belief] is the answer, but looking at the failure rates, I think [Opposite Belief] is actually the bottleneck.
 
-I have been thinking about the hurdles surrounding [TOPIC] and I am gathering some real-world perspectives.
+Am I crazy, or are you seeing that too?
 
-I would love to borrow your brain for a moment. What works for you in this area and where is the friction?
+### Deutsch
 
-Low-key chat. 10 minutes.
+Hi [Name],
 
-Does sometime this week work?
-[CALENDLY-LINK]
+ich habe deinen Post zu [Topic] gesehen. Fast alle setzen da ja gerade auf [Common Belief], aber wenn man sich die Error-Rates ansieht, scheint mir [Opposite Belief] eigentlich das größere Problem.
+
+Bin ich da auf dem Holzweg oder siehst du das ähnlich?
+
+---
+
+## Template 4: The Follow-Up (One only)
+
+*Send 5 days later if no reply.*
+
+### English
+
+Bumping this—just curious if [Specific Problem] is even in your top 10 headaches right now. If not, I'll stop barking up this tree.
+
+### Deutsch
+
+Kurzes Follow-up – ist [Specific Problem] bei euch überhaupt ein relevantes Thema gerade? Falls nicht, hake ich das ab.
+
+---
+
+## Rules
+
+1. **Never ask for a meeting in the first message.** Ask a binary question that they can answer in one sentence.
+2. **No Calendly link in cold outreach.** The link goes in a follow-up message AFTER they've shown interest.
+3. **Fill every placeholder with specific details from your research.** Generic text = deleted.
+4. **Never say "no pitch", "not selling", or defensive disclaimers.** If the message is interesting, they won't think it's a pitch.
+5. **One follow-up only.** If they don't reply to the follow-up, move on.
+6. **Default to English for AI/dev/engineering spaces**, even in DACH. German only for non-technical founders or German-only profiles.
