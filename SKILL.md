@@ -73,15 +73,54 @@ The user browses LinkedIn manually and pastes contact information. Accept **any 
 - Any other context the user mentions
 
 **What to do with partial info:**
-- If the user gives only a profile URL: ask them to also paste the name and title from the profile, or look it up via Google (`site:linkedin.com/in/<slug>` often shows the cached headline).
-- If the user gives only a name + company: that's enough to start company research. Note the profile URL as missing.
-- Never ask the user to go back to LinkedIn for more data unless absolutely necessary. Work with what you have.
+- If the user gives only a profile URL: enrich via Google cache (see Phase 3).
+- If the user gives only a name + company: enrich via Google cache, then start company research.
+- Never ask the user to go back to LinkedIn for more data. Work with what you have + Google cache.
 
 **Deduplication:** Cross-check against the exclusion list from Phase 1. Skip anyone already contacted.
 
-## Phase 3: Research Companies (Public Sources Only)
+## Phase 3: Enrich and Research (Public Sources Only)
 
-For each company from the user's contact list, research using **only public sources**. No LinkedIn automation.
+For each contact, enrich missing data and research their company using **only public sources**. Never open LinkedIn directly.
+
+### Google-Cached LinkedIn Enrichment
+
+This is the primary tool for filling gaps in the user's pasted data. Google indexes LinkedIn profiles and shows name, headline, company, and location in the search snippet — **without ever visiting LinkedIn**.
+
+**When to use:** For every contact where you're missing title, company, location, or profile URL.
+
+**How it works:**
+
+```bash
+# If you have a name + company:
+openclaw browser navigate "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22<Name>%22+%22<Company>%22" --browser-profile openclaw
+openclaw browser snapshot --browser-profile openclaw
+
+# If you have only a profile URL slug:
+openclaw browser navigate "https://www.google.com/search?q=site%3Alinkedin.com%2Fin%2F<slug>" --browser-profile openclaw
+openclaw browser snapshot --browser-profile openclaw
+
+# If you want to find more decision makers at a qualified company:
+openclaw browser navigate "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22<Company>%22+%22CTO%22+OR+%22founder%22+OR+%22VP%22" --browser-profile openclaw
+openclaw browser snapshot --browser-profile openclaw
+```
+
+**What you get from Google snippets (without visiting LinkedIn):**
+- Full name
+- Headline (usually title + company)
+- Location (city, country)
+- Profile URL
+- Sometimes first ~200 chars of About section
+
+**What you do NOT get (and that's fine):**
+- Full work history
+- Connections
+- Contact info
+- Full activity feed
+
+**This is enough.** Name + title + company + location is all you need for scoring and outreach drafting. The `[Company Detail]` for outreach comes from the company website and Google searches about the person — not from their LinkedIn profile.
+
+**Important:** Never click through to the LinkedIn profile from Google results. Only read the snippet text visible on the Google results page itself.
 
 ### Company Website
 
