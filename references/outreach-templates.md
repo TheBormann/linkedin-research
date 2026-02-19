@@ -1,137 +1,118 @@
 # Outreach Scripts (High-Status, A/B Tested)
 
-**Strategy:** Do not ask for a meeting. Ask a question that provokes a reaction. End every message with a forward-selling arbitrage offer (the insight briefing trade). If they reply, *then* you suggest a call.
+**Strategy:** Do not ask for a meeting. Ask a question that provokes a reaction. End every message with a forward-selling arbitrage offer. If they reply, *then* you suggest a call.
 
 ## Hard Rules (Non-Negotiable)
 
 1. **Zero Pitching:** NEVER mention a product, tool, or solution we are building.
 2. **Zero Begging:** NEVER ask for a call, meeting, or 15 minutes of their time. Ask a binary question they can answer in one sentence.
-3. **Forward-Selling Arbitrage:** Every draft MUST end with the trade: "I'm compiling data from 20+ teams - one sentence from you, insight briefing back next week." This is honest even with zero data. You are building the pool now. The first 5 replies become the foundation.
-4. **Specificity Proof:** The opening MUST contain a `[Company Detail]` - a specific, operational fact from their website/product/LinkedIn that fails the swap test (if it works with a different company name, rewrite it).
-5. **40-Word Ceiling:** Maximum 3-4 sentences. Maximum 40 words. Cut all fluff, pleasantries, introductory filler. Write like a busy exec sending a quick Slack DM. If it reads like AI wrote it, it's too long.
-6. **No Calendly link in cold outreach.** The link goes in a follow-up AFTER they've shown interest.
-7. **No defensive disclaimers** ("no pitch", "not selling"). If the message is interesting, they won't think it's a pitch.
-8. **NEVER use em-dashes (—).** Use regular hyphens (-), commas, or periods. Em-dashes look pretentious and AI-generated.
+3. **Honest framing:** NEVER say "my 20 teams" or imply you run a consultancy or have clients. You are doing research conversations with founders. Say "ich spreche gerade mit Gründern darüber" or "I've been talking to a few founders about this". That is true from day one.
+4. **Forward-Selling Arbitrage:** Every draft MUST end with the trade: offer to share what you are hearing from other founders in exchange for their perspective. One sentence from them, the aggregated insight back. This is honest - every reply builds the pool.
+5. **Specificity Hook:** The opening MUST reference something the person *said, wrote, or decided* - a LinkedIn post, a quote in an interview, a specific product decision they made publicly. NOT what their company does. They founded it. They know what it does. Prove you paid attention to *them specifically*. If you cannot find a specific personal hook, reference a very specific operational detail (a number, a customer name, a technical decision) that only someone who actually looked would know.
+6. **40-Word Ceiling:** Maximum 3-4 sentences. Maximum 40 words total. Cut everything that is not load-bearing.
+7. **Flat, normal tone:** Write like a normal person texting a peer. No cool verbs, no marketing language, no words that try to sound energetic or young ("jagt durch", "spannend", "krass", "pushing the boundaries"). Slightly boring is fine. Authenticity beats style.
+8. **No Calendly link in cold outreach.** Goes in follow-up only after they show interest.
+9. **No defensive disclaimers.** Drop "kein Pitch", "not selling", "rein explorativ" entirely. If the message is interesting they will not think it is a pitch.
+10. **NEVER use em-dashes (—).** Use commas or periods instead.
 
 ## A/B Testing Process
 
 Generate **both Winkel A and Winkel B** for every contact scored 3+.
 
-- Send Winkel A to the first batch of 20.
-- Send Winkel B to the next 20.
+- Send Winkel A to the first batch.
+- Send Winkel B to the next batch.
 - Measure response rates. Kill the loser, iterate the winner.
 
 ## Placeholders
 
-Fill from research data. **Every placeholder must be a specific, verifiable fact — never generic.**
+Fill from research data. Every placeholder must be specific and verifiable.
 
 - `[Name]` — First name
-- `[Company Detail]` — Specific operational fact proving research. Must fail the swap test. (e.g. "Since Synthflow processes millions of voice calls for contact centers", "Saw Dust routes multi-step agent chains through custom tool configs")
-- `[Specific Pain]` — Concrete, ugly bottleneck (e.g. "context drifting at 4k tokens", "halluzinierende Tool-Calls bei Multi-Step Agents")
-- `[Status Quo]` — What teams do to cope (e.g. "manually review logs", "Prompt-Versionen in Google Docs tracken")
-- `[Use Case]` — What the company's agents do (e.g. "voice automation for contact centers")
-- `[Common Belief]` — Industry obsession (e.g. "Latency", "Token-Kosten")
-- `[Opposite Belief]` — Contrarian insight from your data (e.g. "Regression Tests bei Prompt-Updates")
+- `[Personal Hook]` — Something they said, wrote, or decided publicly. A post, quote, interview statement, or specific product call. NOT a company description.
+- `[Specific Pain]` — A concrete operational bottleneck. Ugly and specific, not generic. (e.g. "Regression bei Prompt-Updates rausfinden", "context drift ab 4k tokens", "wissen wann ein neuer Agent-Config sicher ist")
+- `[Status Quo]` — What they or most teams currently do to cope. (e.g. "manuell gegenchecken", "sich auf Bauchgefühl verlassen")
+- `[Common Belief]` — What the industry currently fixates on. (e.g. "Latenz", "Token-Kosten")
+- `[Opposite Belief]` — The thing you think is actually the bigger problem, based on what you are hearing. Must be genuinely counter-intuitive.
 - `[Company]` — Company name
-- `[Number]` — A specific, real number from Phase 1 interviews (NEVER guess)
-- `[Topic]` — The problem domain
 
 ---
 
-## Template 1: The Reality Check (Winkel A — Phase 1 Workhorse)
+## Template 1: The Reality Check (Winkel A)
 
-*Use when: Founder building agents who talks about reliability/evals. Best for Tier 3 / early-stage founders.*
-*Goal: Provoke a reaction about a specific bottleneck. Gather intelligence. Max 40 words.*
-
-**Why it works:** Questions their competence. Provokes defensive or honest response.
-**The trap:** If `[Specific Pain]` is generic (e.g. "hallucinations"), you get ignored. Use ugly operational details.
-**Strategic use:** Intelligence-gathering weapon. If 5 founders say "we don't trust auto-evals because X," X becomes ammunition for Template 2.
-
-### English
-
-Hi [Name],
-[Company Detail]. Solved [Specific Pain] yet or still [Status Quo]?
-Mapping this across 20 teams anonymously. One sentence from you, insight briefing comes back next week.
+*Opens with something they personally said or did. Asks a direct binary question about a specific operational pain. Closes with the honest research trade.*
 
 ### Deutsch
 
 Hi [Name],
-[Company Detail]. Löst ihr [Specific Pain] schon automatisiert oder noch [Status Quo]?
-Kartografiere das gerade bei 20 Teams. Ein Satz reicht, Insight-Briefing kommt nächste Woche.
-
----
-
-## Template 2: The Pattern Match (Winkel A Variant — Bridge to Credibility)
-
-*Use ONLY after completing Template 1 interviews. The numbers must be real.*
-*Best for: VPs/Heads of Engineering at 20-500 person companies.*
-*Goal: Imply bird's-eye market view they don't have. Max 40 words.*
-
-**Why it works:** VPs are competitive — they need to know if they're behind.
-**The trap:** The `[Number]` MUST come from Phase 1 interviews. If you guess, you reveal yourself as an outsider.
+du hast [Personal Hook] erwähnt. Wie löst ihr das konkret - habt ihr da schon etwas Verlässliches oder läuft das noch auf [Status Quo]?
+Ich spreche gerade mit ein paar Gründern darüber und teile dir gerne, was ich höre.
 
 ### English
 
 Hi [Name],
-[Company Detail]. Teams I'm tracking hit a wall at [Number] because [Status Quo] stops scaling.
-Seeing that at [Company] too? Compiling the full pattern, briefing goes out next week.
+you mentioned [Personal Hook]. How do you actually handle that - do you have something reliable in place or is it still [Status Quo]?
+I've been talking to a few founders about this and happy to share what I'm hearing.
+
+---
+
+## Template 2: The Pattern Match (Winkel A Variant)
+
+*Use ONLY after real conversations. The observation must come from something you actually heard, not guessed.*
 
 ### Deutsch
 
 Hi [Name],
-[Company Detail]. Teams die ich tracke stoßen bei [Number] an die Wand, weil [Status Quo] nicht mehr skaliert.
-Merkt ihr das auch? Briefing mit dem vollen Muster kommt nächste Woche.
-
----
-
-## Template 3: The Contrarian (Winkel B — The Boss Fight)
-
-*Use ONLY with a genuine contrarian insight backed by Phase 1+2 data.*
-*Best for: Tier 1 founders (CEO/CTO of scaled companies). They want secrets and counter-intuitive truths.*
-*Goal: Intellectual challenge they can't resist correcting. Max 40 words.*
-
-**Why it works:** Doesn't ask for time. Offers an intellectual challenge. Top founders can't resist correcting someone who is interestingly wrong.
-**The trap:** Your `[Opposite Belief]` must be a real counter-narrative from your data, not just a slightly different opinion.
+du hast [Personal Hook] erwähnt. Ich höre das gerade von mehreren Gründern: [Specific Pain] ist das, woran es hakt, nicht das Offensichtliche.
+Siehst du das bei [Company] auch so oder läuft das bei euch anders?
 
 ### English
 
 Hi [Name],
-[Company Detail]. Everyone obsesses over [Common Belief], but my data from 20 teams shows [Opposite Belief] is the real blocker.
-Am I wrong? Happy to share the insight briefing.
+you mentioned [Personal Hook]. I keep hearing the same thing from founders right now: [Specific Pain] is where it actually breaks, not the obvious stuff.
+Is that true at [Company] too, or does it work differently for you?
+
+---
+
+## Template 3: The Contrarian (Winkel B)
+
+*Opens with something they personally said or did. Challenges a common assumption. Closes with the research trade.*
 
 ### Deutsch
 
 Hi [Name],
-[Company Detail]. Alle fixieren sich auf [Common Belief], aber meine Daten von 20 Teams zeigen: [Opposite Belief] ist der echte Blocker.
-Völlig falsch? Insight-Briefing teile ich gerne.
+du hast [Personal Hook] angesprochen. Alle reden gerade über [Common Belief], aber was ich von Gründern höre ist, dass [Opposite Belief] das eigentliche Problem ist.
+Siehst du das anders?
+
+### English
+
+Hi [Name],
+you mentioned [Personal Hook]. Everyone is focused on [Common Belief] right now, but what I keep hearing from founders is that [Opposite Belief] is the real issue.
+Do you see it differently?
 
 ---
 
 ## Template 4: The Follow-Up (One only)
 
-*Send 5 days later if no reply. Max 20 words. One follow-up per contact — then move on.*
-
-### English
-
-Briefing on [Common Belief] vs. [Opposite Belief] is almost done. Want me to send it over?
+*Send 5 days later if no reply. Max 2 sentences.*
 
 ### Deutsch
 
-Briefing zu [Common Belief] vs. [Opposite Belief] ist fast fertig. Soll ich es dir schicken?
+Hi [Name],
+kurzes Follow-up zu meiner Nachricht. Falls [Specific Pain] gerade kein Thema ist, kein Problem.
+
+### English
+
+Hi [Name],
+quick follow-up on my message. If [Specific Pain] is not relevant right now, no worries.
 
 ---
 
 ## The Escalation Sequence
 
-These templates are a ladder. You climb it with data from each step.
+1. Send Template 1 to first batch (Winkel A).
+2. Send Template 3 to second batch (Winkel B).
+3. Measure reply rates. Under 20% on both means the hook is wrong, not the format. Change the pain point and retest.
+4. Use real quotes and observations from replies to load Template 2.
+5. Iterate. Each round sharpens the next.
 
-1. **Send Template 1** to 20 Tier 3 / early-stage founders (Winkel A batch).
-2. **Send Template 3** to 20 different founders (Winkel B batch).
-3. **Measure reply rates.**
-   - **< 20% on both:** Your `[Specific Pain]` and `[Opposite Belief]` are wrong. Pick different angles, re-test.
-   - **> 20% on one:** You found a nerve. Kill the loser template. Double down on the winner.
-4. **Harvest data** from replies. Extract specific failure modes, numbers, quotes.
-5. **Load Template 2** with real data from replies. Send to 10 mid-tier VPs/Heads of.
-6. **Iterate.** Each round of replies makes the next round's messages sharper.
-
-**The templates are empty guns. The ammunition is your research. If you skip Phase 1, Templates 2 and 3 will backfire.**
+**The templates are empty without a real personal hook. If you cannot find something specific the person said or did, do not send.**

@@ -230,31 +230,32 @@ Use website (team page, careers page) + Crunchbase for employee count. Don't rel
 
 For contacts scored 3+, strictly generate TWO distinct outreach variations based on [references/outreach-templates.md](references/outreach-templates.md). Read that file before drafting.
 
-**The Golden Rules of Outreach:**
-1. **Zero Pitching:** NEVER mention a product, tool, or solution we are building.
-2. **Zero Begging:** NEVER ask for a call, meeting, or 15 minutes of their time.
-3. **Information Arbitrage:** Always offer the aggregated insights from other founders as the value exchange.
-4. **Anti-AI Tone:** Maximum 3-4 sentences. No pleasantries ("Hope you are well", "Exciting profile").
-
 ### Hard Enforcement Rules
 
-These are non-negotiable constraints. If a draft violates any of them, it is a failure. Regenerate.
+These are non-negotiable. If a draft violates any of them, it is a failure. Regenerate.
 
-**Rule 1 — Forced Forward-Selling Arbitrage:**
-Every draft MUST end with a forward-selling information arbitrage offer. Explicitly state that you are currently compiling anonymized data from 20+ founders and will share the final insight briefing in exchange for a quick chat reply. This is the only CTA allowed. Never ask for a call, meeting, or time slot. The trade is: they give you one data point in a sentence, you give them the aggregated report. This is honest even with zero data — you are building the pool right now. The first 5 replies become the foundation for the briefing.
+**Rule 1 — Personal Hook, Not Company Description:**
+The opening MUST reference something the person *said, wrote, or publicly decided* - a LinkedIn post, an interview quote, a specific statement they made. NEVER open by describing what their company does. They founded it. They know. Prove you paid attention to *them*, not their homepage.
+- FAIL: "Synthflow processes 65M voice calls" (describes the company)
+- FAIL: "You build AI agents for contact centers" (describes the company)
+- PASS: "du hast beim SaaStock erwähnt, dass die Qualitätsmessung im letzten Schritt das eigentliche Problem ist" (references what they personally said)
+- PASS: "your post about proving prompt changes to stakeholders" (references what they personally wrote)
 
-**Rule 2 — Specificity Proof (Anti-Generic Filter):**
-DO NOT use generic opening phrases that could apply to any company. You MUST extract a highly specific, operational detail from the contact's company website, product, LinkedIn profile, or public content (gathered in Phase 3) to prove you did the research. Test: if the opening hook still makes sense when you swap in a different company name, it is too generic and must be rewritten. Examples:
-- FAIL: "You build AI agents" (applies to 500 companies)
-- FAIL: "Your work in the AI space is impressive" (empty flattery)
-- PASS: "Since Synthflow is processing millions of voice calls for contact centers" (specific, operational, verifiable)
-- PASS: "Saw that Dust is routing multi-step agent chains through custom tool configs" (shows you read their docs)
+**Rule 2 — Honest Framing, No Fake Credibility:**
+NEVER say "my 20 teams", "the teams I work with", or imply you have clients or a consultancy. You are having research conversations with founders. Say "ich spreche gerade mit ein paar Gründern darüber" or "I've been talking to a few founders about this." That is true from the first conversation.
 
-**Rule 3 — Radical Brevity (40-Word Ceiling):**
-Absolute maximum length is 3-4 sentences. Maximum 40 words total. Cut all fluff, pleasantries, introductory filler, and self-justification. Write like a busy executive sending a quick, direct Slack message to a peer. LLMs default to over-explaining and qualifying — actively fight this. If the draft reads like it was written by an AI, it is too long. Strip it down until it feels uncomfortably short.
+**Rule 3 — Forward-Selling Arbitrage:**
+End with the trade: offer to share what you are hearing from other founders in exchange for their perspective. Do not quantify it falsely. "Ich teile dir gerne, was ich höre" is enough. Honest and open.
 
-**Rule 4 — No Em-Dashes:**
-NEVER use em-dashes (—) in outreach drafts. They look pretentious and AI-generated. Use regular hyphens (-), commas, or periods instead.
+**Rule 4 — 40-Word Ceiling:**
+Maximum 3-4 sentences. Maximum 40 words total. Cut everything that is not load-bearing.
+
+**Rule 5 — Flat, Normal Tone:**
+Write like a normal person texting a peer. No marketing verbs, no cool-sounding language, no words that try to sound energetic ("jagt durch", "spannend", "krass", "revolutioniert"). Slightly boring is correct. Authenticity beats style.
+
+**Rule 6 — No Em-Dashes (—):** Use commas or periods.
+
+**Rule 7 — No Disclaimers:** Drop "kein Pitch", "not selling", "rein explorativ". If the message is interesting it will not read as a pitch.
 
 ### Variations
 
