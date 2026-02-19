@@ -162,26 +162,42 @@ Combined score (1-5) based on **both** person fit AND company fit:
 - Company website is dead/parked
 - Contact has been in role <3 months (no context yet)
 
-## Phase 5: Draft Outreach
+## Phase 5: Draft Outreach (A/B Testing Framework)
 
-For contacts scored 3+, draft a personalized outreach message using the templates in [references/outreach-templates.md](references/outreach-templates.md). Read that file before drafting any messages.
+For contacts scored 3+, strictly generate TWO distinct outreach variations based on [references/outreach-templates.md](references/outreach-templates.md). Read that file before drafting.
 
-**Template selection (quick reference):**
+**The Golden Rules of Outreach:**
+1. **Zero Pitching:** NEVER mention a product, tool, or solution we are building.
+2. **Zero Begging:** NEVER ask for a call, meeting, or 15 minutes of their time.
+3. **Information Arbitrage:** Always offer the aggregated insights from other founders as the value exchange.
+4. **Anti-AI Tone:** Maximum 3-4 sentences. No pleasantries ("Hope you are well", "Exciting profile").
 
-| Contact type | Template |
-|-------------|----------|
-| Founder/CEO testing a hypothesis | 1 — Hypothesis |
-| Founder/CEO, peer comparison angle | 2 — Pattern |
-| VP/Head of, understanding their workflow | 3 — Workflow |
-| Warm connection or early-stage founder | 4 — Short |
+### Hard Enforcement Rules
+
+These are non-negotiable constraints. If a draft violates any of them, it is a failure. Regenerate.
+
+**Rule 1 — Forced Forward-Selling Arbitrage:**
+Every draft MUST end with a forward-selling information arbitrage offer. Explicitly state that you are currently compiling anonymized data from 20+ founders and will share the final insight briefing in exchange for a quick chat reply. This is the only CTA allowed. Never ask for a call, meeting, or time slot. The trade is: they give you one data point in a sentence, you give them the aggregated report. This is honest even with zero data — you are building the pool right now. The first 5 replies become the foundation for the briefing.
+
+**Rule 2 — Specificity Proof (Anti-Generic Filter):**
+DO NOT use generic opening phrases that could apply to any company. You MUST extract a highly specific, operational detail from the contact's company website, product, LinkedIn profile, or public content (gathered in Phase 2-3) to prove you did the research. Test: if the opening hook still makes sense when you swap in a different company name, it is too generic and must be rewritten. Examples:
+- FAIL: "You build AI agents" (applies to 500 companies)
+- FAIL: "Your work in the AI space is impressive" (empty flattery)
+- PASS: "Since Synthflow is processing millions of voice calls for contact centers" (specific, operational, verifiable)
+- PASS: "Saw that Dust is routing multi-step agent chains through custom tool configs" (shows you read their docs)
+
+**Rule 3 — Radical Brevity (40-Word Ceiling):**
+Absolute maximum length is 3-4 sentences. Maximum 40 words total. Cut all fluff, pleasantries, introductory filler, and self-justification. Write like a busy executive sending a quick, direct Slack message to a peer. LLMs default to over-explaining and qualifying — actively fight this. If the draft reads like it was written by an AI, it is too long. Strip it down until it feels uncomfortably short.
+
+### Variations
+
+Generate these two variations for every contact:
+- **Winkel A (The Reality Check):** Based on Template 1. Provokes a reaction about a specific, ugly bottleneck.
+- **Winkel B (The Contrarian):** Based on Template 3. Poses a counter-intuitive market observation.
+
+Output both drafts in the JSON under `outreach_draft_A` and `outreach_draft_B`.
 
 **Language:** Default to German for DACH-region contacts, English otherwise. Ask user if unclear.
-
-**Key rules:**
-- Fill all placeholders with specifics from the research (never leave generic text)
-- Leave `[CALENDLY-LINK]` as-is — user fills this in
-- Never pitch a solution — frame everything as research/exploration
-- Reference something concrete from their profile or company
 
 ## Phase 6: Generate CSV
 
@@ -207,7 +223,8 @@ JSON format per contact:
   "relevance_score": 4,
   "relevance_notes": "Led product at 3 B2B SaaS cos, posts about user research methods",
   "experience_summary": "10yr product leadership, prev. Stripe and Notion",
-  "outreach_draft": "Hi Jane, I'm researching how product teams prioritize user feedback..."
+  "outreach_draft_A": "Hi Jane, since Acme ships async evals for enterprise pipelines — solved regression testing on prompt updates yet or still manual diffs? Mapping this across 20 teams, insight briefing comes back next week.",
+  "outreach_draft_B": "Hi Jane, since Acme ships async evals — everyone obsesses over latency, but my data from 20 teams shows regression on prompt updates is the real blocker. Am I wrong? Happy to share the briefing."
 }
 ```
 

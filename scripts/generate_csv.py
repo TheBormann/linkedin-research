@@ -8,7 +8,7 @@ Usage:
 Fields per contact:
     name, title, company, company_url, company_size, company_rating, company_notes,
     location, profile_url, relevance_score, relevance_notes, experience_summary,
-    outreach_draft
+    outreach_draft_A, outreach_draft_B (and legacy outreach_draft)
 """
 
 import argparse
@@ -30,6 +30,8 @@ FIELDS = [
     "relevance_score",
     "relevance_notes",
     "experience_summary",
+    "outreach_draft_A",
+    "outreach_draft_B",
     "outreach_draft",
 ]
 
