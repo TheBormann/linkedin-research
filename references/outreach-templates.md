@@ -30,7 +30,11 @@ If you have no verifiable personal hook with a URL, skip the contact. Do not sen
 9. **No Calendly link in cold outreach.** Goes in follow-up only after they show interest.
 10. **No defensive disclaimers.** Drop "kein Pitch", "not selling", "rein explorativ" entirely. If the message is interesting they will not think it is a pitch.
 11. **NEVER use em-dashes (—).** Use commas or periods instead.
-12. **Always add a source line with URL below each draft.** Start with "Quelle:" (German) or "Source:" (English) followed by the full URL where the hook information comes from. LinkedIn post URL, article URL, or company website page URL. If you cannot provide a verifiable URL, write "VERIFY NEEDED:" and describe where to look. The user must be able to click the link and verify the claim.
+12. **Always add a source line with URL below each draft.** Start with "Quelle:" (German) or "Source:" (English) followed by the full URL where the hook information comes from. LinkedIn post URL, article URL, or company website page URL. If you cannot provide a verifiable URL:
+    - For high-relevance contacts (4-5 score): tell the user "HIGH RELEVANCE - NEED MANUAL RESEARCH: Please check [Name]'s LinkedIn profile and paste relevant posts/interviews."
+    - For medium-relevance contacts (3 score): skip and move to next contact.
+    
+Do not write "VERIFY NEEDED:" without an action. Either provide a URL or explicitly ask the user to find one.
 
 ## A/B Testing Process
 

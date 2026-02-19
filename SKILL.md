@@ -279,7 +279,11 @@ After every generated message, add a line starting with "Quelle:" (German) or "S
 - If it comes from an interview or article: provide the full article URL.
 - If it comes from a company website observation: provide the exact page URL.
 
-**CRITICAL: If you cannot provide a full, clickable URL, DO NOT generate that draft.** Mark it as "SKIP - no verifiable source found" and move to the next contact. "VERIFY NEEDED:" is not acceptable. The user should not have to hunt for sources. Either you have a URL or you skip the contact.
+**CRITICAL: If you cannot provide a full, clickable URL, DO NOT generate that draft.** Instead:
+- If the contact is high-relevance (score 4-5), tell the user: "HIGH RELEVANCE - NEED MANUAL RESEARCH: [Name] at [Company] scores [X]/5 but no verifiable personal hook found. Please check their LinkedIn profile and paste any relevant posts, interviews, or public statements they have made. Then I will generate the drafts."
+- If the contact is medium-relevance (score 3), mark it as "SKIP - no verifiable source found" and move to the next contact.
+
+"VERIFY NEEDED:" with no action is not acceptable. Either you have a URL, or you explicitly ask the user to find one for high-value contacts.
 
 Example (acceptable):
 ```
