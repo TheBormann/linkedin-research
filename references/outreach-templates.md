@@ -6,11 +6,12 @@
 
 1. **Zero Pitching:** NEVER mention a product, tool, or solution we are building.
 2. **Zero Begging:** NEVER ask for a call, meeting, or 15 minutes of their time. Ask a binary question they can answer in one sentence.
-3. **Forward-Selling Arbitrage:** Every draft MUST end with the trade: "I'm compiling data from 20+ teams — one sentence from you, insight briefing back next week." This is honest even with zero data. You are building the pool now. The first 5 replies become the foundation.
-4. **Specificity Proof:** The opening MUST contain a `[Company Detail]` — a specific, operational fact from their website/product/LinkedIn that fails the swap test (if it works with a different company name, rewrite it).
+3. **Forward-Selling Arbitrage:** Every draft MUST end with the trade: "I'm compiling data from 20+ teams - one sentence from you, insight briefing back next week." This is honest even with zero data. You are building the pool now. The first 5 replies become the foundation.
+4. **Specificity Proof:** The opening MUST contain a `[Company Detail]` - a specific, operational fact from their website/product/LinkedIn that fails the swap test (if it works with a different company name, rewrite it).
 5. **40-Word Ceiling:** Maximum 3-4 sentences. Maximum 40 words. Cut all fluff, pleasantries, introductory filler. Write like a busy exec sending a quick Slack DM. If it reads like AI wrote it, it's too long.
 6. **No Calendly link in cold outreach.** The link goes in a follow-up AFTER they've shown interest.
 7. **No defensive disclaimers** ("no pitch", "not selling"). If the message is interesting, they won't think it's a pitch.
+8. **NEVER use em-dashes (—).** Use regular hyphens (-), commas, or periods. Em-dashes look pretentious and AI-generated.
 
 ## A/B Testing Process
 
@@ -49,14 +50,14 @@ Fill from research data. **Every placeholder must be a specific, verifiable fact
 ### English
 
 Hi [Name],
-[Company Detail] — solved [Specific Pain] yet or still [Status Quo]?
-Mapping this across 20 teams anonymously. One sentence from you — insight briefing comes back next week.
+[Company Detail]. Solved [Specific Pain] yet or still [Status Quo]?
+Mapping this across 20 teams anonymously. One sentence from you, insight briefing comes back next week.
 
 ### Deutsch
 
 Hi [Name],
-[Company Detail] — löst ihr [Specific Pain] schon automatisiert oder noch [Status Quo]?
-Kartografiere das gerade bei 20 Teams. Ein Satz reicht — Insight-Briefing kommt nächste Woche.
+[Company Detail]. Löst ihr [Specific Pain] schon automatisiert oder noch [Status Quo]?
+Kartografiere das gerade bei 20 Teams. Ein Satz reicht, Insight-Briefing kommt nächste Woche.
 
 ---
 
@@ -72,13 +73,13 @@ Kartografiere das gerade bei 20 Teams. Ein Satz reicht — Insight-Briefing komm
 ### English
 
 Hi [Name],
-[Company Detail] — teams I'm tracking hit a wall at [Number] because [Status Quo] stops scaling.
-Seeing that at [Company] too? Compiling the full pattern — briefing goes out next week.
+[Company Detail]. Teams I'm tracking hit a wall at [Number] because [Status Quo] stops scaling.
+Seeing that at [Company] too? Compiling the full pattern, briefing goes out next week.
 
 ### Deutsch
 
 Hi [Name],
-[Company Detail] — Teams die ich tracke stoßen bei [Number] an die Wand, weil [Status Quo] nicht mehr skaliert.
+[Company Detail]. Teams die ich tracke stoßen bei [Number] an die Wand, weil [Status Quo] nicht mehr skaliert.
 Merkt ihr das auch? Briefing mit dem vollen Muster kommt nächste Woche.
 
 ---
@@ -95,13 +96,13 @@ Merkt ihr das auch? Briefing mit dem vollen Muster kommt nächste Woche.
 ### English
 
 Hi [Name],
-[Company Detail] — everyone obsesses over [Common Belief], but my data from 20 teams shows [Opposite Belief] is the real blocker.
+[Company Detail]. Everyone obsesses over [Common Belief], but my data from 20 teams shows [Opposite Belief] is the real blocker.
 Am I wrong? Happy to share the insight briefing.
 
 ### Deutsch
 
 Hi [Name],
-[Company Detail] — alle fixieren sich auf [Common Belief], aber meine Daten von 20 Teams zeigen: [Opposite Belief] ist der echte Blocker.
+[Company Detail]. Alle fixieren sich auf [Common Belief], aber meine Daten von 20 Teams zeigen: [Opposite Belief] ist der echte Blocker.
 Völlig falsch? Insight-Briefing teile ich gerne.
 
 ---

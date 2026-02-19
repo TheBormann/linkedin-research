@@ -253,6 +253,9 @@ DO NOT use generic opening phrases that could apply to any company. You MUST ext
 **Rule 3 — Radical Brevity (40-Word Ceiling):**
 Absolute maximum length is 3-4 sentences. Maximum 40 words total. Cut all fluff, pleasantries, introductory filler, and self-justification. Write like a busy executive sending a quick, direct Slack message to a peer. LLMs default to over-explaining and qualifying — actively fight this. If the draft reads like it was written by an AI, it is too long. Strip it down until it feels uncomfortably short.
 
+**Rule 4 — No Em-Dashes:**
+NEVER use em-dashes (—) in outreach drafts. They look pretentious and AI-generated. Use regular hyphens (-), commas, or periods instead.
+
 ### Variations
 
 Generate these two variations for every contact:
@@ -289,8 +292,8 @@ JSON format per contact:
   "relevance_score": 4,
   "relevance_notes": "Led product at 3 B2B SaaS cos, posts about user research methods",
   "experience_summary": "10yr product leadership, prev. Stripe and Notion",
-  "outreach_draft_A": "Hi Jane, since Acme ships async evals for enterprise pipelines — solved regression testing on prompt updates yet or still manual diffs? Mapping this across 20 teams, insight briefing comes back next week.",
-  "outreach_draft_B": "Hi Jane, since Acme ships async evals — everyone obsesses over latency, but my data from 20 teams shows regression on prompt updates is the real blocker. Am I wrong? Happy to share the briefing."
+  "outreach_draft_A": "Hi Jane, since Acme ships async evals for enterprise pipelines. Solved regression testing on prompt updates yet or still manual diffs? Mapping this across 20 teams, insight briefing comes back next week.",
+  "outreach_draft_B": "Hi Jane, since Acme ships async evals. Everyone obsesses over latency, but my data from 20 teams shows regression on prompt updates is the real blocker. Am I wrong? Happy to share the briefing."
 }
 ```
 
