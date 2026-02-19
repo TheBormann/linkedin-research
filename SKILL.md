@@ -235,11 +235,22 @@ For contacts scored 3+, strictly generate TWO distinct outreach variations based
 These are non-negotiable. If a draft violates any of them, it is a failure. Regenerate.
 
 **Rule 1 — Personal Hook, Not Company Description:**
-The opening MUST reference something the person *said, wrote, or publicly decided* - a LinkedIn post, an interview quote, a specific statement they made. NEVER open by describing what their company does. They founded it. They know. Prove you paid attention to *them*, not their homepage.
-- FAIL: "Synthflow processes 65M voice calls" (describes the company)
-- FAIL: "You build AI agents for contact centers" (describes the company)
-- PASS: "du hast beim SaaStock erwähnt, dass die Qualitätsmessung im letzten Schritt das eigentliche Problem ist" (references what they personally said)
-- PASS: "your post about proving prompt changes to stakeholders" (references what they personally wrote)
+The opening MUST reference something the person *said, wrote, or publicly decided*. NEVER describe what their company does, how big they are, who their customers are, what their tech stack is, or what stage they are at. They founded it. They live it every day. Telling them facts about their own company is condescending.
+
+BANNED OPENERS (all variations of telling them what they already know):
+- FAIL: "Synthflow processes 65M voice calls" → describing their scale
+- FAIL: "You build AI agents for contact centers" → describing their product
+- FAIL: "ihr verarbeitet 65 Millionen Calls und habt nach der Series A noch mehr Volumen vor euch" → describing their scale AND funding
+- FAIL: "Brand Eins schrieb über dich als Mitverantwortlichen für das DSGVO-konforme Langdock-Stack" → describing their tech stack
+- FAIL: "Cognigy powers enterprise CX agents for Fortune 500s" → describing their customers
+- FAIL: "Nexus lets non-technical teams build agents" → describing their value prop
+
+CORRECT OPENERS (reference something they personally said or decided):
+- PASS: "du hast beim SaaStock erwähnt, dass die Qualitätsmessung im letzten Schritt das eigentliche Problem ist" → references what they said
+- PASS: "your LinkedIn post about proving prompt changes to stakeholders hit home" → references what they wrote
+- PASS: "ihr habt euch bewusst für EU-Infrastruktur entschieden statt US-Cloud" → references a specific decision they made (not what the company does)
+
+If you cannot find something they personally said, wrote, or decided, DO NOT SEND. Use a fallback contact where you do have a personal hook.
 
 **Rule 2 — Honest Framing, No Fake Credibility:**
 NEVER say "my 20 teams", "the teams I work with", or imply you have clients or a consultancy. You are having research conversations with founders. Say "ich spreche gerade mit ein paar Gründern darüber" or "I've been talking to a few founders about this." That is true from the first conversation.
@@ -263,21 +274,24 @@ Each message must be entirely in one language. German for DACH contacts, English
 **Rule 8 — No Disclaimers:** Drop "kein Pitch", "not selling", "rein explorativ". If the message is interesting it will not read as a pitch.
 
 **Rule 9 — Always add a source line with URL below each draft:**
-After every generated message, add a line starting with "Quelle:" (German) or "Source:" (English) that provides the full URL where the hook information comes from. This allows the user to verify before sending.
+After every generated message, add a line starting with "Quelle:" (German) or "Source:" (English) that provides the full URL where the hook information comes from.
 - If the hook comes from a LinkedIn post: provide the full LinkedIn post URL.
 - If it comes from an interview or article: provide the full article URL.
 - If it comes from a company website observation: provide the exact page URL.
-- If you cannot find or provide a verifiable URL, mark it clearly with "VERIFY NEEDED:" and describe where to look for the information.
 
-Example:
+**CRITICAL: If you cannot provide a full, clickable URL, DO NOT generate that draft.** Mark it as "SKIP - no verifiable source found" and move to the next contact. "VERIFY NEEDED:" is not acceptable. The user should not have to hunt for sources. Either you have a URL or you skip the contact.
+
+Example (acceptable):
 ```
 Quelle: https://www.linkedin.com/posts/lennard-schmidt_langdock-maus-prompt-regression-activity-123456789
 ```
 ```
 Source: https://www.businessinsider.com/langdock-growth-2026-02
 ```
+
+Example (not acceptable - skip this contact instead):
 ```
-VERIFY NEEDED: Hakob mentioned "last mile" problem at SaaStock - check SaaStock speaker page or YouTube for recording
+VERIFY NEEDED: Hakob mentioned "last mile" problem at SaaStock
 ```
 
 ### Variations

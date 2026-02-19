@@ -8,11 +8,22 @@
 2. **Zero Begging:** NEVER ask for a call, meeting, or 15 minutes of their time. Ask a binary question they can answer in one sentence.
 3. **Honest framing:** NEVER say "my 20 teams" or imply you run a consultancy or have clients. You are doing research conversations with founders. Say "ich spreche gerade mit Gründern darüber" or "I've been talking to a few founders about this". That is true from day one.
 4. **Forward-Selling Arbitrage:** Every draft MUST end with the trade: offer to share what you are hearing from other founders in exchange for their perspective. One sentence from them, the aggregated insight back. This is honest - every reply builds the pool.
-5. **Specificity Hook:** The opening MUST prove you paid attention to this specific person. Use this priority order:
-   - **Best:** Something they personally said or wrote - a LinkedIn post, an interview quote, a talk. References what *they* think, not what their company does.
-   - **Good:** A decision visible in their product or company that only someone who actually looked would notice - a technical architecture choice, a specific customer segment they chose, a pricing model, a hiring pattern. Must be non-obvious and non-homepage.
-   - **Also good:** Something a co-founder or close colleague said publicly that they would recognize and have an opinion on.
-   - **Never acceptable:** Describing what their company does. They founded it. They know.
+5. **Specificity Hook:** The opening MUST reference something the person *said, wrote, or decided*. NEVER describe what their company does, how big they are, who their customers are, what their tech stack is, or what funding stage they are at. They founded it. They know all of this. Telling them is condescending.
+
+BANNED (all variations of explaining their own company to them):
+   - Describing their scale: "ihr verarbeitet 65 Millionen Calls"
+   - Describing their product: "Synthflow builds voice agents"
+   - Describing their tech: "DSGVO-konforme Stack"
+   - Describing their customers: "Kunden wie Merck"
+   - Describing their funding: "nach der Series A"
+   - Describing their value prop: "lets non-technical teams build agents"
+
+ALLOWED (references what they personally did or said):
+   - **Best:** Something they said in a post, interview, or talk with a verifiable URL.
+   - **Good:** A specific decision they made that is visible and non-obvious (e.g. "ihr habt euch für EU-Infrastruktur entschieden" not "ihr seid DSGVO-konform").
+   - **Also good:** Something a co-founder said that they would recognize.
+
+If you have no verifiable personal hook with a URL, skip the contact. Do not send.
 6. **40-Word Ceiling:** Maximum 3-4 sentences. Maximum 40 words total. Cut everything that is not load-bearing.
 7. **Flat, normal tone:** Write like a normal person texting a peer. No cool verbs, no marketing language, no words that try to sound energetic or young ("jagt durch", "spannend", "krass", "pushing the boundaries"). Slightly boring is fine. Authenticity beats style. Avoid words that sound accusatory or negative in German: "betonst du überall", "rumklicken", "herumexperimentieren". Avoid words that minimize what they wrote: "blurb", "snippet", "little post".
 8. **One language per message.** German for DACH contacts, English otherwise. No mixing within a message. Established technical terms (Prompt, RAG, Eval) are fine in either language.
