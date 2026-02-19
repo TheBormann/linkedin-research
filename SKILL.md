@@ -1,9 +1,9 @@
 ---
-name: linkedin-research
-description: Research and qualify LinkedIn contacts for problem discovery outreach. User manually finds contacts on LinkedIn and pastes them. Skill handles company research via public sources (no LinkedIn automation), scoring, and A/B outreach draft generation. Triggers on "find people to interview about X", "research LinkedIn contacts", "who should I talk to about Z problem", "qualify these contacts", "draft outreach for these people".
+name: outreach-research
+description: Research and qualify contacts for problem discovery outreach. User pastes contacts from LinkedIn or other sources. Skill handles company research via public sources, Google-cached LinkedIn enrichment, scoring, and A/B outreach draft generation. Triggers on "find people to interview about X", "research contacts", "who should I talk to about Z problem", "qualify these contacts", "draft outreach for these people".
 ---
 
-# LinkedIn Research
+# Outreach Research
 
 Qualify decision-maker contacts and generate A/B-tested outreach drafts. The user manually browses LinkedIn and pastes contact info. The skill does everything else: company research via public sources, scoring, and draft generation.
 
