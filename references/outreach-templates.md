@@ -19,7 +19,7 @@
 9. **No Calendly link in cold outreach.** Goes in follow-up only after they show interest.
 10. **No defensive disclaimers.** Drop "kein Pitch", "not selling", "rein explorativ" entirely. If the message is interesting they will not think it is a pitch.
 11. **NEVER use em-dashes (—).** Use commas or periods instead.
-12. **Always add a source line below each draft.** Start with "Quelle:" (German) or "Source:" (English). Name exactly where the hook comes from so the user can verify before sending. Post topic and date, interview and publication, or specific page/feature observed.
+12. **Always add a source line with URL below each draft.** Start with "Quelle:" (German) or "Source:" (English) followed by the full URL where the hook information comes from. LinkedIn post URL, article URL, or company website page URL. If you cannot provide a verifiable URL, write "VERIFY NEEDED:" and describe where to look. The user must be able to click the link and verify the claim.
 
 ## A/B Testing Process
 

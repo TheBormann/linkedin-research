@@ -262,15 +262,22 @@ Each message must be entirely in one language. German for DACH contacts, English
 
 **Rule 8 — No Disclaimers:** Drop "kein Pitch", "not selling", "rein explorativ". If the message is interesting it will not read as a pitch.
 
-**Rule 9 — Always add a source line below each draft:**
-After every generated message, add a line starting with "Quelle:" (German) or "Source:" (English) that states exactly where the hook information comes from. This allows the user to verify before sending. If the hook comes from a LinkedIn post, name the post topic and approximate date. If it comes from an interview, name the publication and date. If it comes from a product/website observation, state what page or feature you looked at.
+**Rule 9 — Always add a source line with URL below each draft:**
+After every generated message, add a line starting with "Quelle:" (German) or "Source:" (English) that provides the full URL where the hook information comes from. This allows the user to verify before sending.
+- If the hook comes from a LinkedIn post: provide the full LinkedIn post URL.
+- If it comes from an interview or article: provide the full article URL.
+- If it comes from a company website observation: provide the exact page URL.
+- If you cannot find or provide a verifiable URL, mark it clearly with "VERIFY NEEDED:" and describe where to look for the information.
 
 Example:
 ```
-Quelle: LinkedIn-Post von Lennard Schmidt, Feb 2026 - "tens of thousands of MAUs" und Prompt-Regression-Pain
+Quelle: https://www.linkedin.com/posts/lennard-schmidt_langdock-maus-prompt-regression-activity-123456789
 ```
 ```
-Source: SaaStock interview with Hakob Astabatsyan, 2024 - "last mile of agent quality measurement"
+Source: https://www.businessinsider.com/langdock-growth-2026-02
+```
+```
+VERIFY NEEDED: Hakob mentioned "last mile" problem at SaaStock - check SaaStock speaker page or YouTube for recording
 ```
 
 ### Variations
