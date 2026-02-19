@@ -14,10 +14,12 @@
    - **Also good:** Something a co-founder or close colleague said publicly that they would recognize and have an opinion on.
    - **Never acceptable:** Describing what their company does. They founded it. They know.
 6. **40-Word Ceiling:** Maximum 3-4 sentences. Maximum 40 words total. Cut everything that is not load-bearing.
-7. **Flat, normal tone:** Write like a normal person texting a peer. No cool verbs, no marketing language, no words that try to sound energetic or young ("jagt durch", "spannend", "krass", "pushing the boundaries"). Slightly boring is fine. Authenticity beats style.
-8. **No Calendly link in cold outreach.** Goes in follow-up only after they show interest.
-9. **No defensive disclaimers.** Drop "kein Pitch", "not selling", "rein explorativ" entirely. If the message is interesting they will not think it is a pitch.
-10. **NEVER use em-dashes (—).** Use commas or periods instead.
+7. **Flat, normal tone:** Write like a normal person texting a peer. No cool verbs, no marketing language, no words that try to sound energetic or young ("jagt durch", "spannend", "krass", "pushing the boundaries"). Slightly boring is fine. Authenticity beats style. Avoid words that sound accusatory or negative in German: "betonst du überall", "rumklicken", "herumexperimentieren". Avoid words that minimize what they wrote: "blurb", "snippet", "little post".
+8. **One language per message.** German for DACH contacts, English otherwise. No mixing within a message. Established technical terms (Prompt, RAG, Eval) are fine in either language.
+9. **No Calendly link in cold outreach.** Goes in follow-up only after they show interest.
+10. **No defensive disclaimers.** Drop "kein Pitch", "not selling", "rein explorativ" entirely. If the message is interesting they will not think it is a pitch.
+11. **NEVER use em-dashes (—).** Use commas or periods instead.
+12. **Always add a source line below each draft.** Start with "Quelle:" (German) or "Source:" (English). Name exactly where the hook comes from so the user can verify before sending. Post topic and date, interview and publication, or specific page/feature observed.
 
 ## A/B Testing Process
 

@@ -252,10 +252,26 @@ Maximum 3-4 sentences. Maximum 40 words total. Cut everything that is not load-b
 
 **Rule 5 — Flat, Normal Tone:**
 Write like a normal person texting a peer. No marketing verbs, no cool-sounding language, no words that try to sound energetic ("jagt durch", "spannend", "krass", "revolutioniert"). Slightly boring is correct. Authenticity beats style.
+Avoid words that sound negative or accusatory in German: "betonst du überall", "rumklicken", "herumexperimentieren". Re-read each draft and ask: does any word make the recipient feel criticized or looked down on? If yes, rewrite.
+Avoid words that minimize their writing or work: "blurb", "snippet", "little post". Treat what they wrote as something worth taking seriously.
 
-**Rule 6 — No Em-Dashes (—):** Use commas or periods.
+**Rule 6 — One Language Per Message:**
+Each message must be entirely in one language. German for DACH contacts, English otherwise. Do not mix. The only exception is proper nouns, product names, and established technical terms (e.g. "Prompt", "RAG", "Eval") that have no natural German equivalent.
 
-**Rule 7 — No Disclaimers:** Drop "kein Pitch", "not selling", "rein explorativ". If the message is interesting it will not read as a pitch.
+**Rule 7 — No Em-Dashes (—):** Use commas or periods.
+
+**Rule 8 — No Disclaimers:** Drop "kein Pitch", "not selling", "rein explorativ". If the message is interesting it will not read as a pitch.
+
+**Rule 9 — Always add a source line below each draft:**
+After every generated message, add a line starting with "Quelle:" (German) or "Source:" (English) that states exactly where the hook information comes from. This allows the user to verify before sending. If the hook comes from a LinkedIn post, name the post topic and approximate date. If it comes from an interview, name the publication and date. If it comes from a product/website observation, state what page or feature you looked at.
+
+Example:
+```
+Quelle: LinkedIn-Post von Lennard Schmidt, Feb 2026 - "tens of thousands of MAUs" und Prompt-Regression-Pain
+```
+```
+Source: SaaStock interview with Hakob Astabatsyan, 2024 - "last mile of agent quality measurement"
+```
 
 ### Variations
 
@@ -263,7 +279,7 @@ Generate these two variations for every contact:
 - **Winkel A (The Reality Check):** Based on Template 1. Provokes a reaction about a specific, ugly bottleneck.
 - **Winkel B (The Contrarian):** Based on Template 3. Poses a counter-intuitive market observation.
 
-Output both drafts in the JSON under `outreach_draft_A` and `outreach_draft_B`.
+Output both drafts in the JSON under `outreach_draft_A` and `outreach_draft_B`. Add `source_A` and `source_B` fields with the verification sources.
 
 **Language:** Default to German for DACH-region contacts, English otherwise. Ask user if unclear.
 
