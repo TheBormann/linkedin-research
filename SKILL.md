@@ -7,7 +7,57 @@ description: Generate targeted LinkedIn search queries based on problem space an
 
 Generate persona-specific LinkedIn search queries, qualify contacts, and generate A/B-tested outreach drafts. The user tells the skill their problem space and outreach phase. The skill generates search queries tailored to who actually feels the pain (not just who owns the company). User manually browses LinkedIn using those queries and pastes contact info. The skill does everything else: company research via public sources, scoring, and draft generation.
 
-**Core principle: zero LinkedIn automation.** All LinkedIn activity is done by the user manually. The skill never touches LinkedIn — it researches companies through websites, Crunchbase, Google, and other public sources. This keeps the user's LinkedIn account safe.
+**Core principle: zero LinkedIn automation.** The skill never clicks, scrolls, or interacts with LinkedIn pages. The user does all navigation. The skill only reads what is already rendered in open tabs — no different from looking at the screen.
+
+## LinkedIn Tab Reading (Preferred Method)
+
+This is the highest-quality enrichment path. The user logs into LinkedIn in the openclaw browser, manually opens profiles and posts, and the skill reads the open tabs passively.
+
+**Why this works:**
+- The skill reads rendered page content — it does not click, scroll, or interact
+- LinkedIn sees a normal logged-in user browsing their own session
+- Zero automation risk: no API calls, no headless scraping, no bot patterns
+- Full page content: work history, about section, recent posts, contact info — everything a logged-in user can see
+
+### How to use it
+
+**Step 1 — User opens the browser and logs in:**
+```bash
+openclaw browser start --browser-profile openclaw
+```
+Navigate to linkedin.com, log in manually (one time only — session persists in the profile).
+
+**Step 2 — User browses LinkedIn:**
+- Run the search queries the skill generated
+- Open profiles that look relevant (Cmd+click to open in new tabs)
+- Open posts you want to use as hooks (open in new tabs)
+- No need to do anything else — just browse normally
+
+**Step 3 — Skill reads what is open:**
+```bash
+# List all open tabs
+openclaw browser tabs --browser-profile openclaw
+
+# Read a specific tab by its target-id
+openclaw browser snapshot --target-id <id> --browser-profile openclaw
+```
+
+The skill scans all open tabs, identifies which are LinkedIn profiles vs. posts vs. search results, and extracts content from each.
+
+**Step 4 — Skill enriches all profiles automatically:**
+From a LinkedIn profile page the skill can extract:
+- Full name, current title, company
+- Location
+- About section (self-description in their own words — great for hooks)
+- Work history (tenure, career trajectory)
+- Recent activity/posts visible on profile
+
+From a LinkedIn post page the skill can extract:
+- Full post text
+- Post date
+- Engagement signals (comment count visible on page)
+
+**This replaces Google cache enrichment for any contact the user has opened in a tab.** Google cache is the fallback when no tab is open for that person.
 
 ## Phase 1: Research Brief & Search Query Generation
 
@@ -248,15 +298,23 @@ The user browses LinkedIn manually and pastes contact information. Accept **any 
 - Any other context the user mentions
 
 **Immediate next step after parsing:**
-1. For each contact, enrich via Google cache (see Phase 3) to get missing title/company/location
-2. Do quick company research (website check, Crunchbase if available)
-3. Apply scoring rules (see Phase 4) to identify high-value contacts (score 3+)
-4. Output a filtered list showing:
+1. Check open browser tabs for LinkedIn pages the user already has open:
+   ```bash
+   openclaw browser tabs --browser-profile openclaw
+   ```
+   For any contact who has a tab open, snapshot it immediately — this gives richer data than Google cache:
+   ```bash
+   openclaw browser snapshot --target-id <id> --browser-profile openclaw
+   ```
+2. For contacts with no open tab, enrich via Google cache (see Phase 3)
+3. Do quick company research (website check, Crunchbase if available)
+4. Apply scoring rules (see Phase 4) to identify high-value contacts (score 3+)
+5. Output a filtered list showing:
    - **HIGH PRIORITY (score 4-5):** [Name, Title, Company, why they're high-value]
    - **MEDIUM PRIORITY (score 3):** [Name, Title, Company]
    - **SKIP (score 1-2):** [Name, Company, reason to skip]
 
-5. For HIGH and MEDIUM priority contacts, immediately proceed to Phase 3 (research for personal hooks)
+6. For HIGH and MEDIUM priority contacts, check if any post tabs are open for them. If yes, snapshot those too for hook extraction. If not, fall back to Google search for public content.
 
 **What to do with partial info:**
 - If the user gives only a profile URL: enrich via Google cache
@@ -265,13 +323,37 @@ The user browses LinkedIn manually and pastes contact information. Accept **any 
 
 **Deduplication:** Cross-check against the exclusion list from Phase 1. Skip anyone already contacted.
 
-## Phase 3: Enrich and Research (Public Sources Only)
+## Phase 3: Enrich and Research
 
-For each contact, enrich missing data and research their company using **only public sources**. Never open LinkedIn directly.
+For each contact, enrich missing data and research their company. Use the tab-reading method first, fall back to Google cache if no tabs are open.
 
-### Google-Cached LinkedIn Enrichment
+### Method 1: Read Open LinkedIn Tabs (Preferred)
 
-This is the primary tool for filling gaps in the user's pasted data. Google indexes LinkedIn profiles and shows name, headline, company, and location in the search snippet — **without ever visiting LinkedIn**.
+If the user has opened the profile in the browser, read it directly. This gives full profile content — work history, about section, recent posts — all in one snapshot.
+
+```bash
+# Check what is open
+openclaw browser tabs --browser-profile openclaw
+
+# Read a profile tab
+openclaw browser snapshot --target-id <id> --browser-profile openclaw
+```
+
+Extract from profile snapshot:
+- Full name, current title, company, location
+- About section — often contains personal framing and priorities in their own words
+- Work history — tenure and career trajectory signal how deeply they feel the problem
+- Recent posts visible on profile — direct hook material with dates
+
+Extract from post tab snapshots:
+- Full post text — use this as the `[Personal Hook]`
+- Source citation: `Quelle: linkedin.com/posts/...` (URL from the tab)
+
+**Never click, scroll, or interact. Only snapshot what is already loaded.**
+
+### Method 2: Google-Cached LinkedIn Enrichment (Fallback)
+
+When no tab is open for a contact. Google indexes LinkedIn profiles and shows name, headline, company, and location in the search snippet — **without ever visiting LinkedIn**.
 
 **When to use:** For every contact where you're missing title, company, location, or profile URL.
 
@@ -380,29 +462,35 @@ Check the company blog for posts written by the contact. Often reveals their int
 
 ### Decision Tree for Personal Hooks
 
-After Googling each HIGH/MEDIUM priority contact:
+For each HIGH/MEDIUM priority contact, work through these steps in order:
 
-**IF you find a LinkedIn post, interview quote, talk, or tweet where they discussed the problem space:**
-→ Extract the quote/observation
-→ Immediately proceed to Phase 5 (draft outreach)
-→ Use that quote as the `[Personal Hook]`
-→ Include the source URL in citation
+**Step 1 — Check open tabs first:**
+```bash
+openclaw browser tabs --browser-profile openclaw
+```
+If a post tab is open for this person → snapshot it → extract hook text → go to Phase 5
+If a profile tab is open → snapshot it → check About section and visible posts for hook material
 
-**IF you find nothing after Googling but contact is score 4-5 (HIGH PRIORITY):**
-→ Tell the user: "**HIGH PRIORITY - NEED MANUAL RESEARCH:** [Name] at [Company] scores [X]/5. No public posts found via Google. Please check their LinkedIn profile manually and paste any relevant posts or quotes they've made about [problem space]."
-→ Wait for user input
-→ When user pastes content, use it as the hook
-→ Source citation: "Quelle: LinkedIn Post (bereitgestellt vom User)" or "Source: LinkedIn post (user-provided)" — NO URL needed
+**Step 2 — If no useful tabs, Google for public content:**
+Search for interviews, podcasts, talks, Twitter posts (see "Google the Person" section above).
+If found → extract quote → go to Phase 5
 
-**IF you find nothing and contact is score 3 (MEDIUM PRIORITY):**
-→ Mark as "SKIP - no verifiable personal hook found"
-→ Move to next contact
-→ Do NOT ask user to do manual research for score 3 contacts
+**Step 3 — If nothing found and contact is score 4-5 (HIGH PRIORITY):**
+→ Tell the user: "**HIGH PRIORITY - NEED MANUAL RESEARCH:** [Name] at [Company] scores [X]/5. Please open their LinkedIn profile in the browser — I'll read it from the tab. Or paste any posts/quotes directly here."
+→ If user opens tab: snapshot it, extract hook, draft
+→ If user pastes text: use it as hook, no URL needed
+
+**Step 4 — If nothing found and contact is score 3 (MEDIUM PRIORITY):**
+→ Mark as "SKIP - no hook found"
+→ Move on. Do not ask the user for manual research.
 
 **Source citation rules:**
-- **You found it via Google:** Include full URL (LinkedIn post, article, podcast, etc.)
-- **User provided it manually:** Just note the source type, no URL needed
-  - Examples: "Quelle: LinkedIn Post (bereitgestellt vom User)" or "Source: Podcast interview (user-provided)"
+- **Tab snapshot (profile or post):** Use the URL from the tab as source
+  - `Quelle: https://linkedin.com/posts/name-activity-123`
+- **Google search result:** Full URL of the article, podcast, tweet
+- **User pasted it manually:** No URL needed
+  - `Quelle: LinkedIn Post (bereitgestellt vom User)`
+  - `Source: LinkedIn post (user-provided)`
 
 ### Size Estimation
 
