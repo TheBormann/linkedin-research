@@ -1,53 +1,206 @@
 ---
 name: outreach-research
-description: Research and qualify contacts for problem discovery outreach. User pastes contacts from LinkedIn or other sources. Skill handles company research via public sources, Google-cached LinkedIn enrichment, scoring, and A/B outreach draft generation. Triggers on "find people to interview about X", "research contacts", "who should I talk to about Z problem", "qualify these contacts", "draft outreach for these people".
+description: Generate targeted LinkedIn search queries based on problem space and outreach phase, then research and qualify contacts for problem discovery outreach. User tells the skill what problem they're exploring and what phase they're in (problem discovery, validation, or decision). Skill generates tailored search queries, then handles company research via public sources, Google-cached LinkedIn enrichment, scoring, and A/B outreach draft generation. Triggers on "find people to interview about X", "I'm exploring Y problem", "who should I talk to about Z problem", "generate search queries for [problem]", "qualify these contacts", "draft outreach for these people".
 ---
 
 # Outreach Research
 
-Qualify decision-maker contacts and generate A/B-tested outreach drafts. The user manually browses LinkedIn and pastes contact info. The skill does everything else: company research via public sources, scoring, and draft generation.
+Generate persona-specific LinkedIn search queries, qualify contacts, and generate A/B-tested outreach drafts. The user tells the skill their problem space and outreach phase. The skill generates search queries tailored to who actually feels the pain (not just who owns the company). User manually browses LinkedIn using those queries and pastes contact info. The skill does everything else: company research via public sources, scoring, and draft generation.
 
 **Core principle: zero LinkedIn automation.** All LinkedIn activity is done by the user manually. The skill never touches LinkedIn — it researches companies through websites, Crunchbase, Google, and other public sources. This keeps the user's LinkedIn account safe.
 
-## Phase 1: Research Brief
+## Phase 1: Research Brief & Search Query Generation
+
+**IMPORTANT: When the user invokes this skill, the first thing you do is ask them about their problem space and outreach phase, then immediately generate tailored LinkedIn search queries for them to use.**
 
 Collect from the user:
 
-- **Problem space**: What problem are they exploring?
-- **Target persona**: Seniority + function (e.g. "heads of product at B2B SaaS")
+- **Problem space**: What problem are they exploring? (e.g., "SOP handling in Pharma", "sales onboarding at SaaS companies", "AI agent evaluation workflows")
+- **Outreach phase**: What phase are they in?
+  - **Phase A (Problem Discovery)**: Early exploration, need to understand the pain deeply → target people who FEEL the pain daily
+  - **Phase B (Validation)**: Problem understood, validating scope and willingness to solve → target people accountable for the problem
+  - **Phase C (Decision)**: Solution direction clear, testing willingness to pay → target budget holders and decision makers
 - **Company sweet spot**: Industry, stage, size range (default: 5-200 employees)
 - **Geography** (optional): Location constraints
 - **Interview goal**: What specific insight do they need?
 - **Already contacted** (optional): Names of people they've already reached out to. Parse into a simple exclusion list of `name + company` pairs. Skip these throughout the process.
 
-Default to the **AI-startup sweet spot**: 5-200 employees, Seed through Series B, AI agents as core product. Bootstrapped with visible traction also works.
+### Persona Mapping Framework
 
-**Avoid enterprise (>1000) and vertical SaaS where AI is a bolt-on.** Response rate from outreach data is near zero for these profiles.
+**The key insight: match search filters to who FEELS the pain, not who OWNS the company.**
 
-### Search Guidance for the User
+Before generating searches, determine:
+1. **Who experiences this problem daily?** (the doer)
+2. **Who gets blamed when it goes wrong?** (accountability holder)
+3. **Who has budget authority to fix it?** (decision maker)
 
-Give the user these LinkedIn search queries to run manually. They copy-paste the results back to you.
+**Persona tiers by phase:**
 
-**LinkedIn People Search queries:**
+| **Phase** | **Target Tier** | **Who to Search For** | **Why** |
+|-----------|-----------------|----------------------|---------|
+| **Phase A (Problem Discovery)** | Tier 1 | Individual contributors, specialists, managers who do the work daily | Deep operational knowledge, specific pain examples, frustrated enough to talk |
+| **Phase B (Validation)** | Tier 2 | Directors, Heads of Function, Senior Managers accountable for outcomes | Understand scope + business impact, connect pain to priorities |
+| **Phase C (Decision)** | Tier 3 | VPs, C-suite in relevant function | Buying authority, budget allocation, strategic priorities |
+
+**EXCEPTION - Founder-Led Companies (<50 employees):**
+When the problem space naturally sits with **founders/CEOs of small companies** (e.g., AI agent tooling, developer tools, early-stage product challenges), search for founders REGARDLESS of phase, but filter by:
+- Company size: 5-50 employees (founders still feel operational pain)
+- Stage: Seed to Series A (founders still in the weeds)
+- Industry match: Their company must work in the problem domain
+
+### Search Query Generation
+
+**After collecting the brief, immediately generate 3-5 LinkedIn search queries tailored to the problem space and phase.**
+
+#### Query Structure
+
+**For Problem Spaces in Established Companies (Pharma, Manufacturing, Enterprise):**
+
 ```
-"VP Engineering" AND (SaaS OR "developer tools")
-"Head of Product" AND "B2B"
-founder AND ("AI agent" OR "agentic" OR "autonomous agent")
-"CTO" AND ("LLM" OR "RAG" OR "agent") AND (Berlin OR Munich OR Hamburg)
+Phase A (Problem Discovery):
+("[Job Title - Doer Level]" OR "[Alternative Title]") AND ("[Problem Domain Keyword]" OR "[Alternative Keyword]") AND ("[Industry]" OR "[Industry Alternative]")
+
+Phase B (Validation):
+("Head of [Function]" OR "Director [Function]" OR "Senior Manager [Function]") AND ("[Industry]" OR "[Industry Alternative]")
+
+Phase C (Decision):
+("VP [Function]" OR "Chief [Function] Officer") AND ("[Industry]" OR "[Industry Alternative]") AND ([Company Size Filter])
 ```
 
-**Google-indexed LinkedIn profiles (no LinkedIn login needed):**
+**For Founder-Led Problems (Startups, Tech, AI):**
+
 ```
-site:linkedin.com/in "founder" ("AI agent" OR "agentic") Germany
-site:linkedin.com/in "CEO" ("LLM" OR "RAG" OR "agent") Berlin OR Munich OR Hamburg
+All Phases (target founders at small companies):
+(founder OR CEO OR "co-founder") AND ("[Problem Domain]" OR "[Tech Stack]") AND ("[Industry]" OR "[Product Category]")
+
+// Add company size filter via LinkedIn's filter menu: 1-50 employees
+// Add funding filter if relevant: Seed, Series A
+```
+
+#### Example: SOP Handling in Pharma
+
+**User says:** "I'm exploring SOP handling in Pharma companies, Phase A (problem discovery)"
+
+**You generate:**
+
+```
+Phase A - Tier 1 (Problem Discovery):
+1. ("Quality Assurance Manager" OR "QA Manager") AND (SOP OR "Standard Operating Procedures") AND (Pharma OR Pharmaceutical OR Biotech)
+
+2. ("Regulatory Affairs Manager" OR "Compliance Manager") AND (Pharma OR Pharmaceutical OR "Life Sciences")
+
+3. "Document Control" AND (Manager OR Lead OR Specialist) AND (Pharma OR Pharmaceutical)
+
+Google alternative (no LinkedIn login):
+site:linkedin.com/in "Quality Assurance Manager" (SOP OR "Standard Operating Procedures") Pharma Germany
+```
+
+**Guidance to user:**
+- Use LinkedIn's company size filter: 50-1000 employees (sweet spot for process pain + budget)
+- Use LinkedIn's location filter if needed: Germany, Switzerland, US
+- Sort by: Recent activity (more likely to respond)
+
+#### Example: AI Agent Evaluation Workflows
+
+**User says:** "I'm exploring AI agent evaluation workflows, Phase A (problem discovery)"
+
+**You generate:**
+
+```
+Phase A - Founders at AI-Agent Companies (5-50 employees):
+1. (founder OR CEO OR "co-founder") AND ("AI agent" OR "agentic" OR "autonomous agent" OR "multi-agent")
+
+2. (founder OR CTO) AND ("LLM" OR "RAG" OR "agent evaluation" OR "prompt testing")
+
+3. (founder OR "Head of Product") AND ("agent reliability" OR "agent testing" OR "LLM observability")
+
+Google alternative (no LinkedIn login):
+site:linkedin.com/in founder ("AI agent" OR "agentic") (Berlin OR "San Francisco" OR London)
+
+Additional filters to apply on LinkedIn:
+- Company size: 1-50 employees (founders still feel the pain)
+- Industry: Software Development, AI, SaaS
+- Funding: Seed, Series A (avoid pre-seed chaos, avoid Series B+ where founder is too removed)
 ```
 
 **Where to find AI-agent startups:**
-- YC W24/S24/W25 batches — filter for AI/agent companies with EU founders
-- EU AI startup lists on Sifted, Tech.eu, or HTGF portfolio pages
+- YC W24/S24/W25 batches — filter for AI/agent companies
+- EU AI startup lists: Sifted, Tech.eu, HTGF portfolio pages
 - Product Hunt launches tagged "AI agent" in last 6 months
-- HTGF, Earlybird, Cherry Ventures, La Famiglia portfolios — filter for AI
+- VC portfolios: HTGF, Earlybird, Cherry Ventures, La Famiglia, Accel — filter for AI
 - GitHub trending — founders of popular agent frameworks often have startups
+
+#### Example: Sales Onboarding at SaaS Companies
+
+**User says:** "I'm exploring sales onboarding at SaaS companies, Phase B (validation)"
+
+**You generate:**
+
+```
+Phase B - Tier 2 (Validation):
+1. ("VP Sales Enablement" OR "Head of Sales Enablement" OR "Director Revenue Enablement") AND (SaaS OR "B2B Software")
+
+2. ("VP Sales" OR "Chief Revenue Officer") AND (onboarding OR "sales ramp" OR "new hire") AND SaaS
+
+3. "Head of Revenue Operations" AND SaaS
+
+Google alternative:
+site:linkedin.com/in "VP Sales Enablement" SaaS "San Francisco"
+
+Additional filters:
+- Company size: 50-500 employees (sales teams large enough to have onboarding pain)
+- Industry: Software Development, SaaS, B2B
+```
+
+### When to Default to Founders (Small Companies)
+
+**Use founder searches (regardless of phase) when:**
+1. The problem space is inherently a startup/tech problem (AI agents, developer tools, early-stage product decisions, PLG growth, etc.)
+2. The user mentions "AI startups", "SaaS companies", "tech companies" without specifying a function
+3. The problem requires technical depth + decision authority in one person (only true at <50 employee companies)
+
+**Always add these filters for founder searches:**
+- Company size: 5-50 employees (at 50+, founders are too far from operational pain)
+- Stage: Seed to Series A (Series B+ founders are in board meetings, not feeling daily pain)
+
+**Do NOT use founder searches when:**
+1. The problem sits in a specific department of larger companies (QA in Pharma, Sales Ops in Enterprise SaaS)
+2. The user explicitly mentions a non-founder role ("I want to talk to sales managers")
+3. The company size is >100 employees (founders are too removed from operational reality)
+
+### Output Format
+
+After collecting the research brief, output:
+
+```markdown
+## Search Queries for [Problem Space] - Phase [A/B/C]
+
+**Target Persona:** [Tier 1/2/3 description]
+**Why this persona:** [1 sentence explaining why they're the right people to talk to in this phase]
+
+### LinkedIn People Search (copy-paste these):
+
+1. [Query 1]
+2. [Query 2]
+3. [Query 3]
+
+### Google Site Search (no LinkedIn login needed):
+
+[Google query]
+
+### Filters to Apply on LinkedIn:
+- Company size: [range]
+- Location: [if specified]
+- Industry: [if relevant]
+- [Any other relevant filters]
+
+### Additional sourcing ideas:
+[If applicable: YC batches, VC portfolios, industry lists, conferences, etc.]
+
+---
+
+**Next step:** Browse these searches, pick 10-15 people who look relevant, and paste their info (name, title, company, LinkedIn URL if available). I'll research their companies and draft personalized outreach.
+```
 
 Tell the user to browse these, pick people who look relevant, and paste what they find.
 
