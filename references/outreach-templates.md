@@ -30,11 +30,17 @@ If you have no verifiable personal hook with a URL, skip the contact. Do not sen
 9. **No Calendly link in cold outreach.** Goes in follow-up only after they show interest.
 10. **No defensive disclaimers.** Drop "kein Pitch", "not selling", "rein explorativ" entirely. If the message is interesting they will not think it is a pitch.
 11. **NEVER use em-dashes (—).** Use commas or periods instead.
-12. **Always add a source line with URL below each draft.** Start with "Quelle:" (German) or "Source:" (English) followed by the full URL where the hook information comes from. LinkedIn post URL, article URL, or company website page URL. If you cannot provide a verifiable URL:
-    - For high-relevance contacts (4-5 score): tell the user "HIGH RELEVANCE - NEED MANUAL RESEARCH: Please check [Name]'s LinkedIn profile and paste relevant posts/interviews."
-    - For medium-relevance contacts (3 score): skip and move to next contact.
+12. **Source citation rules:**
+    - **If you found the hook via Google/public search:** Add a source line with full URL below each draft. Start with "Quelle:" (German) or "Source:" (English) followed by the full URL (LinkedIn post URL, article URL, podcast URL, etc.)
+    - **If user manually provided the content (LinkedIn post text, quote, etc.):** Add a simple source line describing where it's from, no URL needed. Examples:
+      - "Quelle: LinkedIn Post (bereitgestellt vom User)"
+      - "Source: LinkedIn post (user-provided)"
+      - "Quelle: Podcast-Interview (bereitgestellt vom User)"
+    - **If you cannot find a hook via Google:**
+      - For high-relevance contacts (4-5 score): ask user "HIGH PRIORITY - NEED MANUAL RESEARCH: Please check [Name]'s LinkedIn profile and paste any relevant posts or quotes they've made."
+      - For medium-relevance contacts (3 score): skip and move to next contact.
     
-Do not write "VERIFY NEEDED:" without an action. Either provide a URL or explicitly ask the user to find one.
+The key: URLs only required when YOU found it. When USER provides it, just note where it came from.
 
 ## A/B Testing Process
 

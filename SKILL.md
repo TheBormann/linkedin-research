@@ -386,18 +386,23 @@ After Googling each HIGH/MEDIUM priority contact:
 → Extract the quote/observation
 → Immediately proceed to Phase 5 (draft outreach)
 → Use that quote as the `[Personal Hook]`
-→ Include the source URL
+→ Include the source URL in citation
 
 **IF you find nothing after Googling but contact is score 4-5 (HIGH PRIORITY):**
-→ Tell the user: "**HIGH PRIORITY - NEED MANUAL RESEARCH:** [Name] at [Company] scores [X]/5. No public posts found via Google. Please check their LinkedIn profile manually and paste any relevant posts or public statements. I'll then draft the outreach."
-→ Wait for user input before drafting
+→ Tell the user: "**HIGH PRIORITY - NEED MANUAL RESEARCH:** [Name] at [Company] scores [X]/5. No public posts found via Google. Please check their LinkedIn profile manually and paste any relevant posts or quotes they've made about [problem space]."
+→ Wait for user input
+→ When user pastes content, use it as the hook
+→ Source citation: "Quelle: LinkedIn Post (bereitgestellt vom User)" or "Source: LinkedIn post (user-provided)" — NO URL needed
 
 **IF you find nothing and contact is score 3 (MEDIUM PRIORITY):**
 → Mark as "SKIP - no verifiable personal hook found"
 → Move to next contact
 → Do NOT ask user to do manual research for score 3 contacts
 
-**NEVER generate outreach drafts without a verifiable personal hook and source URL.**
+**Source citation rules:**
+- **You found it via Google:** Include full URL (LinkedIn post, article, podcast, etc.)
+- **User provided it manually:** Just note the source type, no URL needed
+  - Examples: "Quelle: LinkedIn Post (bereitgestellt vom User)" or "Source: Podcast interview (user-provided)"
 
 ### Size Estimation
 
@@ -497,29 +502,36 @@ Each message must be entirely in one language. German for DACH contacts, English
 
 **Rule 8 — No Disclaimers:** Drop "kein Pitch", "not selling", "rein explorativ". If the message is interesting it will not read as a pitch.
 
-**Rule 9 — Always add a source line with URL below each draft:**
-After every generated message, add a line starting with "Quelle:" (German) or "Source:" (English) that provides the full URL where the hook information comes from.
-- If the hook comes from a LinkedIn post: provide the full LinkedIn post URL.
-- If it comes from an interview or article: provide the full article URL.
-- If it comes from a company website observation: provide the exact page URL.
+**Rule 9 — Source citation (flexible based on source):**
+After every generated message, add a source line showing where the hook came from.
 
-**CRITICAL: If you cannot provide a full, clickable URL, DO NOT generate that draft.** Instead:
-- If the contact is high-relevance (score 4-5), tell the user: "HIGH RELEVANCE - NEED MANUAL RESEARCH: [Name] at [Company] scores [X]/5 but no verifiable personal hook found. Please check their LinkedIn profile and paste any relevant posts, interviews, or public statements they have made. Then I will generate the drafts."
-- If the contact is medium-relevance (score 3), mark it as "SKIP - no verifiable source found" and move to the next contact.
+**If YOU found the hook via Google/public search:**
+- Add "Quelle:" (German) or "Source:" (English) with the full URL
+- LinkedIn post: full LinkedIn post URL
+- Interview/article: full article URL
+- Podcast: episode URL or show notes URL
 
-"VERIFY NEEDED:" with no action is not acceptable. Either you have a URL, or you explicitly ask the user to find one for high-value contacts.
+**If USER manually provided the hook (after you asked for manual research):**
+- Add "Quelle:" or "Source:" with just the content type, NO URL needed
+- Examples:
+  - "Quelle: LinkedIn Post (bereitgestellt vom User)"
+  - "Source: LinkedIn post (user-provided)"
+  - "Quelle: Podcast-Interview (bereitgestellt vom User)"
 
-Example (acceptable):
+**If you cannot find a hook via Google:**
+- High-relevance (score 4-5): Ask user "HIGH PRIORITY - NEED MANUAL RESEARCH: [Name] at [Company] scores [X]/5. Please check their LinkedIn profile and paste any relevant posts or quotes."
+- Medium-relevance (score 3): Skip contact, move to next
+
+Examples (YOU found it):
 ```
-Quelle: https://www.linkedin.com/posts/lennard-schmidt_langdock-maus-prompt-regression-activity-123456789
-```
-```
+Quelle: https://www.linkedin.com/posts/lennard-schmidt_langdock-prompt-regression-activity-123456789
 Source: https://www.businessinsider.com/langdock-growth-2026-02
 ```
 
-Example (not acceptable - skip this contact instead):
+Examples (USER provided it):
 ```
-VERIFY NEEDED: Hakob mentioned "last mile" problem at SaaStock
+Quelle: LinkedIn Post (bereitgestellt vom User)
+Source: Podcast interview (user-provided)
 ```
 
 ### Variations
