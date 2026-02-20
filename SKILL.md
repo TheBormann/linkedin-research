@@ -632,17 +632,51 @@ Output both drafts in the JSON under `outreach_draft_A` and `outreach_draft_B`. 
 
 **Language:** Default to German for DACH-region contacts, English otherwise. Ask user if unclear.
 
-## Phase 6: Generate CSV
+## Phase 6: Sync to Google Sheets
+
+**First time only:** Follow the setup guide at `~/.openclaw/skills/outreach-research/SHEETS_SETUP.md`.
+
+After drafts are ready, sync all scored contacts directly to the shared Google Sheet:
 
 ```bash
-python3 ~/.openclaw/skills/linkedin-research/scripts/generate_csv.py \
-  --output ~/.openclaw/workspace/linkedin_research_$(date +%Y-%m-%d).csv \
-  --data '<JSON array>'
+python3 ~/.openclaw/skills/outreach-research/scripts/sync_to_sheets.py \
+  --data '<JSON array>' \
+  --min-score 3
 ```
 
-Options: `--min-score 3`, `--append`.
+If the user has a specific sheet they want to write to, pass `--sheet-id`:
 
-JSON format per contact:
+```bash
+python3 ~/.openclaw/skills/outreach-research/scripts/sync_to_sheets.py \
+  --data '<JSON array>' \
+  --sheet-id 1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms
+```
+
+**What happens:**
+- New contacts are appended as new rows
+- If a contact's LinkedIn URL already exists in the sheet, their row is updated (drafts, score, notes refreshed) without touching the Status or Contacted On columns the user manages manually
+- The sheet is created automatically if it doesn't exist yet
+- Script prints the sheet URL on completion
+
+**Sheet columns (auto-created):**
+
+| Column | Source | Who manages |
+|--------|--------|-------------|
+| Name, Title, Company, URL, Size, Rating, Notes, Location, LinkedIn, Score, Experience | Skill research | Skill (auto-updated) |
+| Draft A, Draft B, Source A, Source B | Phase 5 output | Skill (auto-updated) |
+| Status | e.g. "To Send", "Sent", "Replied", "Skip" | You manually |
+| Contacted On | Date you sent | You manually |
+
+**Fallback — CSV output (if Sheets not configured):**
+
+```bash
+python3 ~/.openclaw/skills/outreach-research/scripts/generate_csv.py \
+  --output ~/.openclaw/workspace/linkedin_research_$(date +%Y-%m-%d).csv \
+  --data '<JSON array>' \
+  --min-score 3
+```
+
+**JSON format per contact (used for both Sheets sync and CSV):**
 
 ```json
 {
@@ -658,8 +692,10 @@ JSON format per contact:
   "relevance_score": 4,
   "relevance_notes": "Led product at 3 B2B SaaS cos, posts about user research methods",
   "experience_summary": "10yr product leadership, prev. Stripe and Notion",
-  "outreach_draft_A": "Hi Jane, since Acme ships async evals for enterprise pipelines. Solved regression testing on prompt updates yet or still manual diffs? Mapping this across 20 teams, insight briefing comes back next week.",
-  "outreach_draft_B": "Hi Jane, since Acme ships async evals. Everyone obsesses over latency, but my data from 20 teams shows regression on prompt updates is the real blocker. Am I wrong? Happy to share the briefing."
+  "outreach_draft_A": "Hi Jane, ...",
+  "outreach_draft_B": "Hi Jane, ...",
+  "source_A": "https://linkedin.com/posts/janesmith-activity-123",
+  "source_B": "https://techcrunch.com/interview-jane-smith"
 }
 ```
 
