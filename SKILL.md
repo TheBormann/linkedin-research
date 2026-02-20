@@ -52,29 +52,41 @@ When the problem space naturally sits with **founders/CEOs of small companies** 
 
 **After collecting the brief, immediately generate 3-5 LinkedIn search queries tailored to the problem space and phase.**
 
-#### Query Structure
+#### Query Structure Principles
+
+**IMPORTANT: Keep queries BROAD. Over-filtering in the search query returns zero results. Use LinkedIn's UI filters instead.**
+
+**Winning pattern:**
+- Search query: 2-3 broad terms maximum
+- Refinement: Use LinkedIn's company size, location, industry filters in the UI
 
 **For Problem Spaces in Established Companies (Pharma, Manufacturing, Enterprise):**
 
 ```
 Phase A (Problem Discovery):
-("[Job Title - Doer Level]" OR "[Alternative Title]") AND ("[Problem Domain Keyword]" OR "[Alternative Keyword]") AND ("[Industry]" OR "[Industry Alternative]")
+"[Job Title]" [Industry]
+Example: "Quality Manager" Pharma
 
 Phase B (Validation):
-("Head of [Function]" OR "Director [Function]" OR "Senior Manager [Function]") AND ("[Industry]" OR "[Industry Alternative]")
+"Head of [Function]" [Industry]
+Example: "Head of Quality" Pharma
 
 Phase C (Decision):
-("VP [Function]" OR "Chief [Function] Officer") AND ("[Industry]" OR "[Industry Alternative]") AND ([Company Size Filter])
+"VP [Function]" [Industry]
+Example: "VP Quality" Pharma
 ```
+
+Then use LinkedIn filters: Company size (50-1000), Location (Germany), etc.
 
 **For Founder-Led Problems (Startups, Tech, AI):**
 
 ```
 All Phases (target founders at small companies):
-(founder OR CEO OR "co-founder") AND ("[Problem Domain]" OR "[Tech Stack]") AND ("[Industry]" OR "[Product Category]")
+founder [Industry/Tech]
+Example: founder AI
+Example: CEO SaaS
 
-// Add company size filter via LinkedIn's filter menu: 1-50 employees
-// Add funding filter if relevant: Seed, Series A
+Then use LinkedIn filters: Company size (1-50), Location, Industry
 ```
 
 #### Example: SOP Handling in Pharma
@@ -85,20 +97,22 @@ All Phases (target founders at small companies):
 
 ```
 Phase A - Tier 1 (Problem Discovery):
-1. ("Quality Assurance Manager" OR "QA Manager") AND (SOP OR "Standard Operating Procedures") AND (Pharma OR Pharmaceutical OR Biotech)
 
-2. ("Regulatory Affairs Manager" OR "Compliance Manager") AND (Pharma OR Pharmaceutical OR "Life Sciences")
+LinkedIn People Search (copy these one by one):
+1. "Quality Manager" Pharma
+2. "Regulatory Affairs" Pharma
+3. "Compliance Manager" Biotech
 
-3. "Document Control" AND (Manager OR Lead OR Specialist) AND (Pharma OR Pharmaceutical)
+Then apply these LinkedIn UI filters:
+- Company size: 50-1,000 employees
+- Location: Germany (or your target region)
+- Current company (to filter out job seekers)
 
 Google alternative (no LinkedIn login):
-site:linkedin.com/in "Quality Assurance Manager" (SOP OR "Standard Operating Procedures") Pharma Germany
+site:linkedin.com/in "Quality Manager" Pharma Germany
 ```
 
-**Guidance to user:**
-- Use LinkedIn's company size filter: 50-1000 employees (sweet spot for process pain + budget)
-- Use LinkedIn's location filter if needed: Germany, Switzerland, US
-- Sort by: Recent activity (more likely to respond)
+**Expected results:** 200-500+ profiles per search. Pick 10-15 who have Manager/Director titles and paste their info back.
 
 #### Example: AI Agent Evaluation Workflows
 
@@ -108,20 +122,20 @@ site:linkedin.com/in "Quality Assurance Manager" (SOP OR "Standard Operating Pro
 
 ```
 Phase A - Founders at AI-Agent Companies (5-50 employees):
-1. (founder OR CEO OR "co-founder") AND ("AI agent" OR "agentic" OR "autonomous agent" OR "multi-agent")
 
-2. (founder OR CTO) AND ("LLM" OR "RAG" OR "agent evaluation" OR "prompt testing")
+LinkedIn People Search (copy these one by one):
+1. founder AI
+2. CEO "machine learning"
+3. CTO agent
 
-3. (founder OR "Head of Product") AND ("agent reliability" OR "agent testing" OR "LLM observability")
+Then apply these LinkedIn UI filters:
+- Company size: 1-50 employees (founders still feel operational pain)
+- Industry: Software Development, Internet
+- Location: San Francisco, Berlin, London (or your target)
 
 Google alternative (no LinkedIn login):
-site:linkedin.com/in founder ("AI agent" OR "agentic") (Berlin OR "San Francisco" OR London)
-
-Additional filters to apply on LinkedIn:
-- Company size: 1-50 employees (founders still feel the pain)
-- Industry: Software Development, AI, SaaS
-- Funding: Seed, Series A (avoid pre-seed chaos, avoid Series B+ where founder is too removed)
-```
+site:linkedin.com/in founder AI Berlin
+site:linkedin.com/in CEO "AI agent" "San Francisco"
 
 **Where to find AI-agent startups:**
 - YC W24/S24/W25 batches — filter for AI/agent companies
@@ -129,6 +143,9 @@ Additional filters to apply on LinkedIn:
 - Product Hunt launches tagged "AI agent" in last 6 months
 - VC portfolios: HTGF, Earlybird, Cherry Ventures, La Famiglia, Accel — filter for AI
 - GitHub trending — founders of popular agent frameworks often have startups
+```
+
+**Expected results:** 1000+ profiles. Pick 10-15 founders whose companies are building AI agents as core product (not just using AI internally).
 
 #### Example: Sales Onboarding at SaaS Companies
 
@@ -138,19 +155,22 @@ Additional filters to apply on LinkedIn:
 
 ```
 Phase B - Tier 2 (Validation):
-1. ("VP Sales Enablement" OR "Head of Sales Enablement" OR "Director Revenue Enablement") AND (SaaS OR "B2B Software")
 
-2. ("VP Sales" OR "Chief Revenue Officer") AND (onboarding OR "sales ramp" OR "new hire") AND SaaS
+LinkedIn People Search (copy these one by one):
+1. "Sales Enablement" SaaS
+2. "VP Sales" SaaS
+3. "Revenue Operations" SaaS
 
-3. "Head of Revenue Operations" AND SaaS
+Then apply these LinkedIn UI filters:
+- Company size: 50-500 employees (sales teams large enough to have onboarding pain)
+- Industry: Software Development
+- Location: US, Europe (or your target)
 
 Google alternative:
-site:linkedin.com/in "VP Sales Enablement" SaaS "San Francisco"
-
-Additional filters:
-- Company size: 50-500 employees (sales teams large enough to have onboarding pain)
-- Industry: Software Development, SaaS, B2B
+site:linkedin.com/in "Sales Enablement" SaaS
 ```
+
+**Expected results:** 500+ profiles. Pick 10-15 who are VP/Director level at B2B SaaS companies.
 
 ### When to Default to Founders (Small Companies)
 
@@ -204,7 +224,9 @@ After collecting the research brief, output:
 
 Tell the user to browse these, pick people who look relevant, and paste what they find.
 
-## Phase 2: User Pastes Contacts
+## Phase 2: User Pastes Contacts → Auto-Filter & Prioritize
+
+**CRITICAL: When user pastes contacts, DO NOT ask them for more information. Immediately start enriching and filtering.**
 
 The user browses LinkedIn manually and pastes contact information. Accept **any format** — the skill must parse all of these:
 
@@ -225,10 +247,21 @@ The user browses LinkedIn manually and pastes contact information. Accept **any 
 - Location (if visible)
 - Any other context the user mentions
 
+**Immediate next step after parsing:**
+1. For each contact, enrich via Google cache (see Phase 3) to get missing title/company/location
+2. Do quick company research (website check, Crunchbase if available)
+3. Apply scoring rules (see Phase 4) to identify high-value contacts (score 3+)
+4. Output a filtered list showing:
+   - **HIGH PRIORITY (score 4-5):** [Name, Title, Company, why they're high-value]
+   - **MEDIUM PRIORITY (score 3):** [Name, Title, Company]
+   - **SKIP (score 1-2):** [Name, Company, reason to skip]
+
+5. For HIGH and MEDIUM priority contacts, immediately proceed to Phase 3 (research for personal hooks)
+
 **What to do with partial info:**
-- If the user gives only a profile URL: enrich via Google cache (see Phase 3).
-- If the user gives only a name + company: enrich via Google cache, then start company research.
-- Never ask the user to go back to LinkedIn for more data. Work with what you have + Google cache.
+- If the user gives only a profile URL: enrich via Google cache
+- If the user gives only a name + company: enrich via Google cache, then start company research
+- NEVER ask the user to go back to LinkedIn for more data. Work with what you have + Google cache.
 
 **Deduplication:** Cross-check against the exclusion list from Phase 1. Skip anyone already contacted.
 
@@ -312,21 +345,59 @@ openclaw browser snapshot --browser-profile openclaw
 
 Extract: funding stage, amount, date, employee count, investors.
 
-### Google the Person
+### Google the Person (CRITICAL FOR OUTREACH HOOKS)
 
-For each contact, search for public content to find the `[Company Detail]` needed for outreach:
+**ALWAYS do this automatically for score 3+ contacts. This is how you find personal hooks without asking the user.**
 
+For each contact, search for public content to find the `[Personal Hook]` needed for outreach:
+
+**Priority 1 - LinkedIn Posts (via Google):**
 ```
-"<full-name>" "<company>" podcast OR interview OR talk OR blog
-"<full-name>" "<company>" site:twitter.com OR site:github.com
-"<full-name>" "<company>" site:youtube.com
+site:linkedin.com/posts/<profile-slug>
+site:linkedin.com/feed/update (if recent posts are indexed)
+```
+LinkedIn posts are the BEST source because they're recent, specific, and show what the person is currently thinking about.
+
+**Priority 2 - Interviews, Podcasts, Talks:**
+```
+"<full-name>" "<company>" podcast OR interview OR talk
+"<full-name>" "<company>" conference OR speaking OR panel
 ```
 
-People who speak at conferences, write blog posts, or post on Twitter about the problem space are easier to personalize outreach for and more likely to respond.
+**Priority 3 - Twitter/X Posts:**
+```
+"<full-name>" site:twitter.com OR site:x.com
+"<full-name>" "<company>" site:twitter.com
+```
 
-### Company Blog
+**Priority 4 - Company Blog:**
+Check the company blog for posts written by the contact. Often reveals their interests and current technical focus.
 
-Check the company blog for posts by the contact. Often reveals their interests and current technical focus — this is where you find the `[Company Detail]` that passes the swap test.
+**Priority 5 - GitHub Activity (for technical founders):**
+```
+"<full-name>" "<company>" site:github.com
+```
+
+### Decision Tree for Personal Hooks
+
+After Googling each HIGH/MEDIUM priority contact:
+
+**IF you find a LinkedIn post, interview quote, talk, or tweet where they discussed the problem space:**
+→ Extract the quote/observation
+→ Immediately proceed to Phase 5 (draft outreach)
+→ Use that quote as the `[Personal Hook]`
+→ Include the source URL
+
+**IF you find nothing after Googling but contact is score 4-5 (HIGH PRIORITY):**
+→ Tell the user: "**HIGH PRIORITY - NEED MANUAL RESEARCH:** [Name] at [Company] scores [X]/5. No public posts found via Google. Please check their LinkedIn profile manually and paste any relevant posts or public statements. I'll then draft the outreach."
+→ Wait for user input before drafting
+
+**IF you find nothing and contact is score 3 (MEDIUM PRIORITY):**
+→ Mark as "SKIP - no verifiable personal hook found"
+→ Move to next contact
+→ Do NOT ask user to do manual research for score 3 contacts
+
+**NEVER generate outreach drafts without a verifiable personal hook and source URL.**
 
 ### Size Estimation
 
